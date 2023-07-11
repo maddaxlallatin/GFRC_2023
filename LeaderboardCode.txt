@@ -1,0 +1,96 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerInfo
+{
+    public string name;
+    public int score;
+
+    public PlayerInfo(string name, int score)
+    {
+        this.name = name;
+        this.score = score;
+    }
+}
+
+public class Leaderboard : MonoBehaviour
+{
+    List<PlayerInfo> collectedStats;
+
+    void Start()
+    {
+        collectedStats = new List<PlayerInfo>();
+        LoadLeaderBoard();
+        SubmitData("Gabriel",350);
+        SubmitData("Jeremy",300);
+        SubmitData("Fritz",460);
+        SubmitData("Susie",320);
+        SubmitData("Cassidy",0);
+        SubmitData("Evan",340);
+        SubmitData("Michael",370);
+        DisplayLeaderboardInConsole();
+    }
+
+    void Update()
+    {
+    }
+
+    public void SubmitData(string userName, int userScore)
+    {
+        PlayerInfo stats = new PlayerInfo(userName, userScore);
+        collectedStats.Add(stats);
+        SortStats();
+        UpdatePlayerPrefsString();
+        DisplayLeaderboardInConsole();
+    }
+
+    void SortStats()
+    {
+        for (int i = collectedStats.Count - 1; i > 0; i--)
+        {
+            if (collectedStats[i].score > collectedStats[i - 1].score)
+            {
+                PlayerInfo tempInfo = collectedStats[i - 1];
+                collectedStats[i - 1] = collectedStats[i];
+                collectedStats[i] = tempInfo;
+            }
+        }
+    }
+
+    void UpdatePlayerPrefsString()
+    {
+        string stats = "";
+        for (int i = 0; i < collectedStats.Count; i++)
+        {
+            stats += collectedStats[i].name + ",";
+            stats += collectedStats[i].score + ",";
+        }
+        PlayerPrefs.SetString("LeaderBoards", stats);
+    }
+
+    void LoadLeaderBoard()
+    {
+        string stats = PlayerPrefs.GetString("LeaderBoards", "");
+        string[] stats2 = stats.Split(',');
+        for (int i = 0; i < stats2.Length - 2; i += 2)
+        {
+            PlayerInfo loadedInfo = new PlayerInfo(stats2[i], int.Parse(stats2[i + 1]));
+            collectedStats.Add(loadedInfo);
+        }
+    }
+
+    void DisplayLeaderboardInConsole()
+    {
+        Debug.Log("Leaderboard:");
+        foreach (PlayerInfo playerInfo in collectedStats)
+        {
+            Debug.Log("Name: " + playerInfo.name + ", Score: " + playerInfo.score);
+        }
+    }
+
+    public void ClearPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+}
