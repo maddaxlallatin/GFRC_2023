@@ -9,6 +9,7 @@ public class SignUpLogInScript : MonoBehaviour
 {
     public TMP_InputField usernameInput;
     public TMP_InputField passwordInput;
+    public GameObject signUpScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,13 @@ public class SignUpLogInScript : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void OpenScreen(){
+        LeanTween.scale(signUpScreen, new Vector3(1,1,1), 0.5f);
+    }
+    public void CloseScreen(){
+        LeanTween.scale(signUpScreen, new Vector3(0,0,0), 0.5f);
     }
 //wahstdas d
     public void SignUpClick()
