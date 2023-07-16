@@ -9,8 +9,8 @@ public static class Global
 
     //Database Managers
     const string databaseName = "URI=file:Assets/Database/GFRC2023Database.db";
-    const string databaseLayout = "users (username VARCHAR(16), password VARCHAR(16));";
-    	const string DB_TABLE_LAYOUT = "users (username VARCHAR(16), pin VARCHAR(4), teamnumber VARCHAR(16), points INT, build VARCHAR(16), unixtime VARCHAR(16));";
+    const string databaseLayout = "users (username VARCHAR(16), password VARCHAR(16), points INT);";
+    const string DB_TABLE_LAYOUT = "users (username VARCHAR(16), pin VARCHAR(4), teamnumber VARCHAR(16), points INT, build VARCHAR(16), unixtime VARCHAR(16));";
 
 
     public static bool isSignedIn = false;
@@ -20,6 +20,7 @@ public static class Global
     {
         public string username;
         public string password;
+        public int points;
     }
 
     static public List<databaseEntry> getDatabaseEntries()
@@ -44,6 +45,7 @@ public static class Global
                             {
                                 username = reader["username"].ToString(),
                                 password = reader["password"].ToString(),
+                                points = int.Parse(reader["points"].ToString()),
 
                             }
                         );
@@ -73,10 +75,11 @@ public static class Global
                 foreach (var entry in entries)
                 {
                     command.CommandText =
-                        "INSERT INTO users (username, password) VALUES\n" +
+                        "INSERT INTO users (username, password, points) VALUES\n" +
                             "(" +
                                 "\"" + entry.username + "\", " +
-                                "\"" + entry.password + "\");\n";
+                                "\"" + entry.password + "\", " +
+                                "\"" + entry.points + "\");\n";
                     command.ExecuteNonQuery();
                 }
             }
