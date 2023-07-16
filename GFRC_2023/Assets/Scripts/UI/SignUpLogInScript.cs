@@ -60,7 +60,8 @@ public class SignUpLogInScript : MonoBehaviour
             new databaseEntry
             {
                 username = usernameInput.text.ToLower(),
-                password = passwordInput.text
+                password = passwordInput.text,
+                points = 0
             }
         );
         insertDatabaseEntry(entries);
