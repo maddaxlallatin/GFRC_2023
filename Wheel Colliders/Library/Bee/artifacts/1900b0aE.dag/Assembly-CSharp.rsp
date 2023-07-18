@@ -347,14 +347,16 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/AntiShake.cs"
 "Assets/CollisionRelay.cs"
 "Assets/Friend.cs"
 "Assets/GrabCone.cs"
 "Assets/GrabCube.cs"
+"Assets/HDrive.cs"
 "Assets/LongArm.cs"
-"Assets/Robot.cs"
 "Assets/Rotation.cs"
 "Assets/SelfHitbox.cs"
+"Assets/SwitchScript.cs"
 "Assets/Wheel.cs"
 -langversion:9.0
 
