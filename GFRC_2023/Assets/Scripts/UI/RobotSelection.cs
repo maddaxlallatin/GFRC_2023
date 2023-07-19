@@ -13,7 +13,7 @@ public class RobotSelection : MonoBehaviour
     private GameObject CurrentImage;
     private Vector3 ImagePosition = new Vector3(438.1551513671875f, 88.75315856933594f, 0);
     private Vector3 LeftSideImagePos = new Vector3(-512.8449096679688f, 88.75315856933594f, 0);
-    private Vector3 RightSideImagePos = new Vector3(1487.155029296875f, 88.75315856933594f, 0);
+    private Vector3 RightSideImagePos = new Vector3(1497.155029296875f, 88.75315856933594f, 0);
     private float animSpeed = 1.0f;
     void Start()
     {
