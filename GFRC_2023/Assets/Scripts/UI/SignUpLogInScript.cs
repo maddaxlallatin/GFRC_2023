@@ -5,9 +5,6 @@ using Mono.Data.Sqlite;
 using System.Data;
 using TMPro;
 using static Global;
-using DG.Tweening;
-
-
 public class SignUpLogInScript : MonoBehaviour
 {
     public TMP_InputField usernameInput;
@@ -26,10 +23,10 @@ public class SignUpLogInScript : MonoBehaviour
     }
 
     public void OpenScreen(){
-        signUpScreen.transform.DOScale(new Vector3(1,1,1), 0.5f);
+        LeanTween.scale(signUpScreen, new Vector3(1,1,1), 0.5f);
     }
     public void CloseScreen(){
-         signUpScreen.transform.DOScale(new Vector3(0,0,0), 0.5f);
+        LeanTween.scale(signUpScreen, new Vector3(0,0,0), 0.5f);
     }
 //wahstdas d
     public void SignUpClick()
@@ -60,8 +57,7 @@ public class SignUpLogInScript : MonoBehaviour
             new databaseEntry
             {
                 username = usernameInput.text.ToLower(),
-                password = passwordInput.text,
-                points = 0
+                password = passwordInput.text
             }
         );
         insertDatabaseEntry(entries);
