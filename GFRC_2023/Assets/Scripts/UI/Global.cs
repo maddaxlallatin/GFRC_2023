@@ -9,7 +9,7 @@ public static class Global
 
     //Database Managers
     const string databaseName = "URI=file:Assets/Database/GFRC2023Database.db";
-    const string databaseLayout = "users (username VARCHAR(16), password VARCHAR(16), points INT);";
+    const string databaseLayout = "users (username VARCHAR(16), password VARCHAR(16), points INT, teamnumber VARCHAR(16), build VARCHAR(16), unixtime VARCHAR(16));";
     const string DB_TABLE_LAYOUT = "users (username VARCHAR(16), pin VARCHAR(4), teamnumber VARCHAR(16), points INT, build VARCHAR(16), unixtime VARCHAR(16));";
 
 
@@ -21,10 +21,14 @@ public static class Global
         public string username;
         public string password;
         public int points;
+        public string teamnumber;
+        public string build;
+        public string unixtime;
     }
 
     static public List<databaseEntry> getDatabaseEntries()
     {
+    
         var list = new List<databaseEntry>();
         using (var connection = new SqliteConnection(databaseName))
         {
@@ -46,6 +50,9 @@ public static class Global
                                 username = reader["username"].ToString(),
                                 password = reader["password"].ToString(),
                                 points = int.Parse(reader["points"].ToString()),
+                                teamnumber = reader["teamnumber"].ToString(),
+                                build = reader["build"].ToString(),
+                                unixtime = reader["unixtime"].ToString(),
 
                             }
                         );
@@ -75,11 +82,14 @@ public static class Global
                 foreach (var entry in entries)
                 {
                     command.CommandText =
-                        "INSERT INTO users (username, password, points) VALUES\n" +
+                        "INSERT INTO users (username, password, points, teamnumber, build, unixtime) VALUES\n" +
                             "(" +
                                 "\"" + entry.username + "\", " +
                                 "\"" + entry.password + "\", " +
-                                "\"" + entry.points + "\");\n";
+                                "\"" + entry.points + "\", " +
+                                "\"" + entry.teamnumber + "\", " +
+                                "\"" + entry.build + "\", " +
+                                "\"" + entry.unixtime + "\");\n";
                     command.ExecuteNonQuery();
                 }
             }
