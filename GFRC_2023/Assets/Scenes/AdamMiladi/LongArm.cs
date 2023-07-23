@@ -9,7 +9,6 @@ public class LongArm : MonoBehaviour
     public float ArmAngle = 0;
     public float ArmSpeed;
     public float GrabASpeed;
-    public float GrabMSpeed;
     public GameObject Grabber;
     public GameObject ExArm;
     public bool Movelock = false;

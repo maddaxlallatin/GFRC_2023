@@ -162,10 +162,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6449286362824258304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ed3ef251d4fc14fa876970bf59d88d, type: 3}
+  m_Script: {fileID: 11500000, guid: d8e5dc1e13f5a60479fa01b738a099f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Claw: {fileID: 1045165394968569232, guid: 3a2687d07962404448698ab564c50446, type: 3}
+  Claw: {fileID: 7417748658699094112, guid: e4d075e7a629b4c49a9702a819dfa781, type: 3}
   ArmFiller: {fileID: 8502892722993940214, guid: 75315f2851645544493454beb020eb9c, type: 3}
   ClawCheck: 0
   Module: {fileID: 0}

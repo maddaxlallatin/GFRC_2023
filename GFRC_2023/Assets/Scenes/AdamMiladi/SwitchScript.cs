@@ -19,20 +19,20 @@ public class SwitchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("1") && ClawCheck == false){
+        if (Input.GetKeyDown("1") && GrabCheck == false){
+        Destroy(Module);
+        Module = Instantiate(ArmFiller,transform);
+        Module.transform.localPosition = new Vector3(0,0,0);
+        GrabCheck = true;
+        ClawCheck = false;
+        }
+
+        if (Input.GetKeyDown("2") && ClawCheck == false){
         Destroy(Module);
         Module = Instantiate(Claw,transform);
         Module.transform.localPosition = new Vector3(0,0,0);
         ClawCheck = true;
         GrabCheck = false;
-        }
-        
-        if (Input.GetKeyDown("2") && GrabCheck == false){
-        Destroy(Module);
-        Module = Instantiate(ArmFiller,transform);
-        Module.transform.localPosition = new Vector3(0,0,0);
-        ClawCheck = false;
-        GrabCheck = true;
         }
     }
 }

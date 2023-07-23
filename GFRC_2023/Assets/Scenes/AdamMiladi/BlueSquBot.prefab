@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 8521902485874960664, guid: e56effb68cd7e524f9b347c4131079aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 27e339774232d534aa90e21e0698b68c, type: 2}
+      objectReference: {fileID: 2100000, guid: 5b95d9aaaebd15f49abdf99838d1bae4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56effb68cd7e524f9b347c4131079aa, type: 3}
 --- !u!1 &2364630267393569269 stripped
@@ -157,10 +157,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2364630267393569269}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6ed3ef251d4fc14fa876970bf59d88d, type: 3}
+  m_Script: {fileID: 11500000, guid: d8e5dc1e13f5a60479fa01b738a099f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Claw: {fileID: 1045165394968569232, guid: 3a2687d07962404448698ab564c50446, type: 3}
+  Claw: {fileID: 7417748658699094112, guid: e4d075e7a629b4c49a9702a819dfa781, type: 3}
   ArmFiller: {fileID: 5881501181705345975, guid: 8486291595ecd13478a24f756cf57926, type: 3}
   ClawCheck: 0
   Module: {fileID: 0}
