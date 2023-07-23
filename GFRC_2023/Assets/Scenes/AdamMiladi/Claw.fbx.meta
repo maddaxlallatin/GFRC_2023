@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:GFRC_2023/Assets/Scenes/AdamMiladi/Claw.fbx.meta
 guid: b753608e868684c4cbb493ed35c420ef
 ModelImporter:
   serializedVersion: 21300
@@ -18,18 +19,53 @@ ModelImporter:
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
+=======
+guid: 26daae648a43e4db88d0a47a293d545c
+timeCreated: 1460373324
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Cone
+    100004: //RootNode
+    100006: Lamp
+    400000: Camera
+    400002: Cone
+    400004: //RootNode
+    400006: Lamp
+    2300000: Cone
+    2300002: //RootNode
+    3300000: Cone
+    3300002: //RootNode
+    4300000: Cone
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+>>>>>>> 06a1ff6bab8c37e24dd6d1392b0bc54d15ee9fd6:GFRC_2023/Assets/Models/Robots/Claw.fbx.meta
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+<<<<<<< HEAD:GFRC_2023/Assets/Scenes/AdamMiladi/Claw.fbx.meta
     importAnimatedCustomProperties: 0
     importConstraints: 0
+=======
+>>>>>>> 06a1ff6bab8c37e24dd6d1392b0bc54d15ee9fd6:GFRC_2023/Assets/Models/Robots/Claw.fbx.meta
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+<<<<<<< HEAD:GFRC_2023/Assets/Scenes/AdamMiladi/Claw.fbx.meta
     extraUserProperties: []
     clipAnimations: []
     isReadable: 0
@@ -65,12 +101,32 @@ ModelImporter:
     secondaryUVMarginMethod: 1
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
+=======
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 600
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+>>>>>>> 06a1ff6bab8c37e24dd6d1392b0bc54d15ee9fd6:GFRC_2023/Assets/Models/Robots/Claw.fbx.meta
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+<<<<<<< HEAD:GFRC_2023/Assets/Scenes/AdamMiladi/Claw.fbx.meta
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
@@ -79,6 +135,11 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
+=======
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+>>>>>>> 06a1ff6bab8c37e24dd6d1392b0bc54d15ee9fd6:GFRC_2023/Assets/Models/Robots/Claw.fbx.meta
     human: []
     skeleton: []
     armTwist: 0.5
@@ -88,6 +149,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+<<<<<<< HEAD:GFRC_2023/Assets/Scenes/AdamMiladi/Claw.fbx.meta
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
@@ -100,6 +162,13 @@ ModelImporter:
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
+=======
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+>>>>>>> 06a1ff6bab8c37e24dd6d1392b0bc54d15ee9fd6:GFRC_2023/Assets/Models/Robots/Claw.fbx.meta
   additionalBone: 0
   userData: 
   assetBundleName: 
