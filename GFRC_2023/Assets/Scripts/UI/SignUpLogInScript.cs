@@ -5,10 +5,14 @@ using Mono.Data.Sqlite;
 using System.Data;
 using TMPro;
 using static Global;
+using DG.Tweening;
+using System;
+
 public class SignUpLogInScript : MonoBehaviour
 {
     public TMP_InputField usernameInput;
     public TMP_InputField passwordInput;
+    public TMP_InputField teamNumberInput;
     public GameObject signUpScreen;
     // Start is called before the first frame update
     void Start()
@@ -57,7 +61,11 @@ public class SignUpLogInScript : MonoBehaviour
             new databaseEntry
             {
                 username = usernameInput.text.ToLower(),
-                password = passwordInput.text
+                password = passwordInput.text,
+                points = 0,
+                teamnumber = teamNumberInput.text,
+                build = "N/A",  
+                unixtime = DateTime.Now.ToString("hh:mm tt MMMM dd, yyyy") + ""
             }
         );
         insertDatabaseEntry(entries);
