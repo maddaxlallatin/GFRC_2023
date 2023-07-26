@@ -498,7 +498,6 @@ GameObject:
   - component: {fileID: 5338266320630957068}
   - component: {fileID: 553689784965690611}
   - component: {fileID: 7275260240692957586}
-  - component: {fileID: 1938910800843244423}
   m_Layer: 0
   m_Name: Cylinder.004
   m_TagString: Untagged
@@ -571,27 +570,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1938910800843244423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4869849577016001822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dba04a853614b14592ac4280f0ffeac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GrabAngle: 0
-  GrabLength: 0
-  ArmAngle: 0
-  ArmSpeed: 0
-  GrabASpeed: 0
-  Grabber: {fileID: 0}
-  ExArm: {fileID: 0}
-  Movelock: 0
-  Relay: {fileID: 0}
 --- !u!1 &5103310120312087504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1227,7 @@ PrefabInstance:
     - target: {fileID: 7071182760956848314, guid: 08e9fb861d2462142826192157e91cd2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 64a5e80ce943fce4a99a56bf6cd9778c, type: 2}
+      objectReference: {fileID: 2100000, guid: 926396c0b19b532428a26eb166c5642e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e9fb861d2462142826192157e91cd2, type: 3}
 --- !u!4 &508016754848726600 stripped

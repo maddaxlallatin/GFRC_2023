@@ -132,7 +132,7 @@ PrefabInstance:
     - target: {fileID: -1990968323811559735, guid: e56effb68cd7e524f9b347c4131079aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 64a5e80ce943fce4a99a56bf6cd9778c, type: 2}
+      objectReference: {fileID: 2100000, guid: 926396c0b19b532428a26eb166c5642e, type: 2}
     - target: {fileID: 919132149155446097, guid: e56effb68cd7e524f9b347c4131079aa, type: 3}
       propertyPath: m_Name
       value: BoxChassis

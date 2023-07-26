@@ -24,10 +24,10 @@ public class CircleClaw : MonoBehaviour
     {
         if (Input.GetKey("e") && Movelock == false)
         {
-            if (ArmAngle < 60)
+            if (ArmAngle < 220)
             {
                 ArmAngle = ArmAngle + .2f;
-                transform.Rotate(0,0,BaseArmSpeed,Space.Self);
+                transform.Rotate(0,-BaseArmSpeed,0,Space.Self);
                 MidArm.transform.Rotate(0,0,MidArmSpeed,Space.Self);
             } 
         }
@@ -36,7 +36,7 @@ public class CircleClaw : MonoBehaviour
             if (ArmAngle > 0)
             {
                 ArmAngle = ArmAngle - .2f;
-                transform.Rotate(0,0,-BaseArmSpeed,Space.Self);
+                transform.Rotate(0,BaseArmSpeed,0,Space.Self);
                 MidArm.transform.Rotate(0,0,-MidArmSpeed,Space.Self);
             }
         }

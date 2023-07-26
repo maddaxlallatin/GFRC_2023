@@ -341,7 +341,6 @@ MonoBehaviour:
   ArmAngle: 0
   ArmSpeed: 0.2
   GrabASpeed: 0.2
-  GrabMSpeed: 0.01
   Grabber: {fileID: 564854593125719507}
   ExArm: {fileID: 4212312678779318214}
   Movelock: 0
@@ -1228,7 +1227,7 @@ PrefabInstance:
     - target: {fileID: 7071182760956848314, guid: 08e9fb861d2462142826192157e91cd2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 64a5e80ce943fce4a99a56bf6cd9778c, type: 2}
+      objectReference: {fileID: 2100000, guid: 926396c0b19b532428a26eb166c5642e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08e9fb861d2462142826192157e91cd2, type: 3}
 --- !u!4 &621380751490337618 stripped
