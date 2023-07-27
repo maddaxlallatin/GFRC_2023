@@ -17,7 +17,3 @@ public class AutoSelectDriveButton : MonoBehaviour
         
     }
 }
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
