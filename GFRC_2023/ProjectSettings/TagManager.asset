@@ -9,6 +9,7 @@ TagManager:
   - Friend
   - ConeCollected
   - CubeCollected
+  - Wheel
   layers:
   - Default
   - TransparentFX
