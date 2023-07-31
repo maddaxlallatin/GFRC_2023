@@ -9,6 +9,8 @@ public class SwitchScript : MonoBehaviour
     public bool ClawCheck = false;
     public GameObject Module;
     public bool GrabCheck = true;
+    public GameObject CubeChuck;
+    public bool ChuckCheck = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class SwitchScript : MonoBehaviour
         Module.transform.localPosition = new Vector3(0,0,0);
         GrabCheck = true;
         ClawCheck = false;
+        ChuckCheck = false;
         }
 
         if (Input.GetKeyDown("2") && ClawCheck == false){
@@ -32,6 +35,16 @@ public class SwitchScript : MonoBehaviour
         Module = Instantiate(Claw,transform);
         Module.transform.localPosition = new Vector3(0,0,0);
         ClawCheck = true;
+        GrabCheck = false;
+        ChuckCheck = false;
+        }
+
+         if (Input.GetKeyDown("3") && ChuckCheck == false){
+        Destroy(Module);
+        Module = Instantiate(CubeChuck,transform);
+        Module.transform.localPosition = new Vector3(0,.18f,0);
+        ChuckCheck = true;
+        ClawCheck = false;
         GrabCheck = false;
         }
     }

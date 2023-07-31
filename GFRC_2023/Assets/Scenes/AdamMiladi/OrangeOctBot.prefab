@@ -244,3 +244,5 @@ MonoBehaviour:
   ClawCheck: 0
   Module: {fileID: 0}
   GrabCheck: 1
+  CubeChuck: {fileID: 7550203807464257469, guid: 960daffd3f30a5145bdf242fd7d616b4, type: 3}
+  ChuckCheck: 0
