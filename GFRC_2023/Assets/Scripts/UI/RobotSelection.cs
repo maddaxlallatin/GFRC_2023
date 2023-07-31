@@ -34,12 +34,11 @@ public class RobotSelection : MonoBehaviour
     public void ManipulatorOneImageSelected()
     {
         CurrentImage.transform.DOMove(LeftSideImagePos, animSpeed).OnComplete(() =>
-        {
-            CurrentImage.transform.position = RightSideImagePos;
-            CurrentImage = ManipulatorOneImages;
-        });
+         {
+             CurrentImage.transform.position = RightSideImagePos;
+             CurrentImage = ManipulatorOneImages;
+         });
         ManipulatorOneImages.transform.DOMove(ImagePosition, animSpeed);
-
 
 
     }
@@ -47,13 +46,11 @@ public class RobotSelection : MonoBehaviour
     {
         CurrentImage.transform.DOMove(LeftSideImagePos, animSpeed).OnComplete(() =>
         {
-            CurrentImage.transform.position = RightSideImagePos;
-            CurrentImage = ManipulatorTwoImages;
+           CurrentImage.transform.position = RightSideImagePos; CurrentImage = ManipulatorTwoImages;
 
-        });
+       });
         ManipulatorTwoImages.transform.DOMove(ImagePosition, animSpeed);
 
 
     }
-
 }

@@ -27,10 +27,10 @@ public class SignUpLogInScript : MonoBehaviour
     }
 
     public void OpenScreen(){
-        signUpScreen.transform.DOScale(new Vector3(1,1,1), 0.5f);
+        LeanTween.scale(signUpScreen, new Vector3(1,1,1), 0.5f);
     }
     public void CloseScreen(){
-         signUpScreen.transform.DOScale(new Vector3(0,0,0), 0.5f);
+        LeanTween.scale(signUpScreen, new Vector3(0,0,0), 0.5f);
     }
 //wahstdas d
     public void SignUpClick()
