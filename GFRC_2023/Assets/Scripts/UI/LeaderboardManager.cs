@@ -14,7 +14,7 @@ public class LeaderboardManager : MonoBehaviour
     public GameObject rowsObject;
     private GameObject thisPrefab;
 
-    void Start()
+    public void OpenLeaderBoard()
     {
         var entries = getDatabaseEntries();
         foreach (var databaseEntry in entries)
@@ -29,6 +29,8 @@ public class LeaderboardManager : MonoBehaviour
             thisPrefab.transform.GetChild(4).GetChild(0).GetComponent<TMP_Text>().text = databaseEntry.points + "";
         }
     }
+
+
 
     // Update is called once per frame
     void Update()
