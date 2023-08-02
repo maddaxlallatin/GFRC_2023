@@ -39,6 +39,7 @@ public class GrabCube : MonoBehaviour
         {
             other.tag = "CubeCollected";
             Full = true;
+            other.gameObject.GetComponent<Rigidbody>().useGravity = false;
             other.gameObject.transform.parent = gameObject.transform;
         }
 
@@ -50,6 +51,8 @@ public class GrabCube : MonoBehaviour
         if (other.gameObject.CompareTag("CubeCollected") && Grab == false )
         {other.tag = "CubeCollect";
         Full = false;
-        other.gameObject.transform.parent = null;}
+        other.gameObject.transform.parent = null;
+        other.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 }

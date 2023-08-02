@@ -39,6 +39,7 @@ public class GrabCone : MonoBehaviour
         {
             other.tag = "ConeCollected";
             Full = true;
+            other.gameObject.GetComponent<Rigidbody>().useGravity = false;
             other.gameObject.transform.parent = gameObject.transform;
         }
 
@@ -50,6 +51,8 @@ public class GrabCone : MonoBehaviour
         if (other.gameObject.CompareTag("ConeCollected") && Grab == false )
         {other.tag = "ConeCollect";
         Full = false;
-        other.gameObject.transform.parent = null;}
+        other.gameObject.transform.parent = null;
+        other.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        }
     }
 }

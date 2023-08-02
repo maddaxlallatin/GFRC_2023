@@ -34,13 +34,11 @@ public class ChuckGrabCube : MonoBehaviour
         {
             Power = Power + .01f;
             if (Power > 20){PCharge = false;}
-            Debug.Log(Power);
         }
         if (Input.GetKey("space") && Full == true && PCharge == false)
         {
             Power = Power - .01f;
             if (Power < .01){PCharge = true;}
-            Debug.Log(Power);
         }   
     }
 
@@ -64,7 +62,6 @@ public class ChuckGrabCube : MonoBehaviour
         {               
             other.gameObject.transform.localPosition = new Vector3(0,0,0);
             other.gameObject.transform.rotation = transform.rotation;
-            Debug.Log(transform.localRotation);
             if (Input.GetKey("space") && ArmAngle == 0) 
             {
               SlingShot = true;  
@@ -78,7 +75,6 @@ public class ChuckGrabCube : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().useGravity = true;
             if (ArmAngle == 0) 
             {
-                Debug.Log(other.gameObject.transform.rotation);
                 other.gameObject.GetComponent<Rigidbody>().AddRelativeForce(-.5f*Power, 0, -0f*Power, ForceMode.Impulse);
                 Power = 0;
             }

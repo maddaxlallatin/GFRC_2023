@@ -239,6 +239,8 @@ MonoBehaviour:
   ClawCheck: 0
   Module: {fileID: 0}
   GrabCheck: 1
+  CubeChuck: {fileID: 7418470450265376584, guid: 477f4767b271ec5419a6f9d2acb4633f, type: 3}
+  ChuckCheck: 0
 --- !u!4 &7860426626479151926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ec8d13c950e788459c201b272954013, type: 3}

@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 8521902485874960664, guid: e56effb68cd7e524f9b347c4131079aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a9d7a5ecad8ffa049ab302e7676f0e2f, type: 2}
+      objectReference: {fileID: 2100000, guid: abca083aa688d8f40b8c04d249d581fd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56effb68cd7e524f9b347c4131079aa, type: 3}
 --- !u!4 &5966046206908524986 stripped
@@ -170,3 +170,5 @@ MonoBehaviour:
   ClawCheck: 0
   Module: {fileID: 0}
   GrabCheck: 1
+  CubeChuck: {fileID: 0}
+  ChuckCheck: 0
