@@ -276,6 +276,7 @@ GameObject:
   - component: {fileID: 254018112413600146}
   - component: {fileID: 5007470190147801091}
   - component: {fileID: 1401348221086480153}
+  - component: {fileID: 7264489160860586819}
   m_Layer: 0
   m_Name: Cube.001
   m_TagString: Untagged
@@ -367,10 +368,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrabLength: 0
   ArmAngle: 0
-  ArmSpeed: 10
   Grabber: {fileID: 6201472921907982850}
-  Movelock: 0
+  FCheck: {fileID: 2509059819368446741}
+  Full: 0
+  SlingShot: 0
+  Power: 0
+  Reset: 0
+  Marker: 0
+  Aimer: {fileID: 8140545203513811640, guid: 6b1e08867812dbf46a84c1a29a312899, type: 3}
+  PickUpBox: {fileID: 7547498521796077239}
   Relay: {fileID: 0}
+--- !u!65 &7264489160860586819
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6201472921907982850}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.025000006, y: 0.38000005, z: 0.024999997}
+  m_Center: {x: 0, y: 1.3322676e-15, z: -0.000000007450581}
 --- !u!1 &6404453541739254561
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +583,7 @@ GameObject:
   - component: {fileID: 6381350728800121314}
   - component: {fileID: 2509059819368446741}
   m_Layer: 0
-  m_Name: Grabber+
+  m_Name: PickupBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -613,6 +633,10 @@ MonoBehaviour:
   Full: 0
   CubeCheck: {fileID: 1401348221086480153}
   ArmAngle: 0
+  Power: 0
+  PCharge: 1
+  SlingShot: 0
+  Reset: 0
 --- !u!1 &7550203807464257469
 GameObject:
   m_ObjectHideFlags: 0
