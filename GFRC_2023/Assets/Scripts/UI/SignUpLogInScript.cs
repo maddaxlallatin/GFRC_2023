@@ -18,6 +18,8 @@ public class SignUpLogInScript : MonoBehaviour
     public GameObject signUpScreen;
     public GameObject welcomeObejct;
     public GameObject incpasswordObj;
+    public TMP_Text usernameText;
+    public GameObject LoginTExt;
 
     public GameObject LoginFirstButton, WelcomeFirstButton, InccorrectFirstButton, StartButton;
     // Start is called before the first frame update
@@ -49,6 +51,8 @@ public class SignUpLogInScript : MonoBehaviour
 
     public void Sucess(){
         userText.text = username + "";
+        usernameText.text = username + "";
+        LoginTExt.SetActive(false);
         signUpScreen.transform.DOScale(new Vector3(0f,0f,0f), 0.35f).OnComplete(() => {
            signUpScreen.SetActive(false);
         });
