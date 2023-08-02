@@ -71,6 +71,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2593748428343844558}
     m_Modifications:
+    - target: {fileID: 1108862308834377026, guid: b6f4f805473196d48876522a3be5f233, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: abca083aa688d8f40b8c04d249d581fd, type: 2}
     - target: {fileID: 1469163129723935895, guid: b6f4f805473196d48876522a3be5f233, type: 3}
       propertyPath: m_Name
       value: Cone
