@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.EventSystems;
 
 public class RobotSelection : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class RobotSelection : MonoBehaviour
     public GameObject DriveImages;
     public GameObject ManipulatorOneImages;
     public GameObject ManipulatorTwoImages;
+    public GameObject mainMenu, StartButton;
 
     private GameObject CurrentImage;
     private Vector3 ImagePosition = new Vector3(540.6867065429688f, 94.52763366699219f, 0);
@@ -52,5 +54,12 @@ public class RobotSelection : MonoBehaviour
         ManipulatorTwoImages.transform.DOMove(ImagePosition, animSpeed);
 
 
+    }
+
+    public void CloseRobotSelection(){
+        gameObject.SetActive(false);
+        mainMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(StartButton);
     }
 }

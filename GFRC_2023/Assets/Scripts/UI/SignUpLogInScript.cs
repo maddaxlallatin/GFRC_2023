@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Mono.Data.Sqlite;
 using System.Data;
 using TMPro;
@@ -17,6 +18,8 @@ public class SignUpLogInScript : MonoBehaviour
     public GameObject signUpScreen;
     public GameObject welcomeObejct;
     public GameObject incpasswordObj;
+
+    public GameObject LoginFirstButton, WelcomeFirstButton, InccorrectFirstButton, StartButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,33 +33,51 @@ public class SignUpLogInScript : MonoBehaviour
     }
 
     public void OpenScreen(){
+        signUpScreen.SetActive(true);
         signUpScreen.transform.DOScale(new Vector3(1,1,1), 0.5f);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(LoginFirstButton);
     }
     public void CloseScreen(){
         signUpScreen.transform.DOScale(new Vector3(0,0,0), 0.5f);
+        signUpScreen.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(StartButton);
+
 
     }
 
     public void Sucess(){
         userText.text = username + "";
         signUpScreen.transform.DOScale(new Vector3(0f,0f,0f), 0.35f).OnComplete(() => {
-           
+           signUpScreen.SetActive(false);
         });
+        welcomeObejct.SetActive(true);
         welcomeObejct.transform.DOScale(new Vector3(1,1,1), 0.35f);
-        
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(WelcomeFirstButton);             
 
     }
 
     public void fail(){
+        incpasswordObj.SetActive(true);
         incpasswordObj.transform.DOScale(new Vector3(1,1,1), 0.5f);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(InccorrectFirstButton);
     }
     public void CloseFail(){
         incpasswordObj.transform.DOScale(new Vector3(0,0,0), 0.5f);
+        incpasswordObj.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(LoginFirstButton);
     }
 //wahstdas d\
 
     public void CloseWelcome(){
         welcomeObejct.transform.DOScale(new Vector3(0,0,0), 0.5f);
+        welcomeObejct.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(StartButton);
     }
     public void SignUpClick()
     {
