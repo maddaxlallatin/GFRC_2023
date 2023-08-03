@@ -7609,7 +7609,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 323459336}
         m_TargetAssemblyTypeName: RobotSelection, Assembly-CSharp
         m_MethodName: DriveImageSelected
         m_Mode: 1
@@ -13622,7 +13622,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 323459336}
         m_TargetAssemblyTypeName: RobotSelection, Assembly-CSharp
         m_MethodName: ManipulatorOneImageSelected
         m_Mode: 1
@@ -14871,7 +14871,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 323459336}
         m_TargetAssemblyTypeName: RobotSelection, Assembly-CSharp
         m_MethodName: ManipulatorTwoImageSelected
         m_Mode: 1
