@@ -10,11 +10,12 @@ public static class Global
     //Database Managers
     const string databaseName = "URI=file:Assets/Database/GFRC2023Database.db";
     const string databaseLayout = "users (username VARCHAR(16), password VARCHAR(16), points INT, teamnumber VARCHAR(16), build VARCHAR(16), unixtime VARCHAR(16));";
-    const string DB_TABLE_LAYOUT = "users (username VARCHAR(16), pin VARCHAR(4), teamnumber VARCHAR(16), points INT, build VARCHAR(16), unixtime VARCHAR(16));";
+    private const string DB_TABLE_LAYOUT = "users (username VARCHAR(16), pin VARCHAR(4), teamnumber VARCHAR(16), points INT, build VARCHAR(16), unixtime VARCHAR(16));";
 
 
     public static bool isSignedIn = false;
     public static string username = "";
+    public static int points = 0;
 
     public class databaseEntry
     {

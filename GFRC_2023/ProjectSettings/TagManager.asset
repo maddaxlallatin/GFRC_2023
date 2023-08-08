@@ -10,6 +10,8 @@ TagManager:
   - ConeCollected
   - CubeCollected
   - Wheel
+  - Cone
+  - Cube
   layers:
   - Default
   - TransparentFX
