@@ -12,6 +12,8 @@ TagManager:
   - Wheel
   - Cone
   - Cube
+  - SideAA
+  - SideAC
   layers:
   - Default
   - TransparentFX

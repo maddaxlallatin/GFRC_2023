@@ -6,9 +6,9 @@ public class HDrive : MonoBehaviour
 {
     
 
-    public float DrivePower = 60f;
-    public float BreakPower = 20f;
-    public float TurnPower = 8f;
+    public float DrivePower = 65f;
+    public float BreakPower = 25f;
+    public float TurnPower = 20f;
     public float torque = 100f;
 
     private float horInput;

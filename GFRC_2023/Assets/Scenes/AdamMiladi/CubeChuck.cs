@@ -76,7 +76,7 @@ public class CubeChuck : MonoBehaviour
                 AimMarker.transform.parent = transform;
             }
             Power = FCheck.Power;
-            AimMarker.transform.localPosition = new Vector3(((-Power*Mathf.Sin(30* Mathf.PI/180)/9.81f)*.5f*Power*Mathf.Sin(60* Mathf.PI/180))-.37f,0, .049f);
+            AimMarker.transform.localPosition = new Vector3((-Power*Mathf.Sin(30* Mathf.PI/180)/9.81f)*.5f*Power*Mathf.Sin(60* Mathf.PI/180)-.37f,0, .049f);
             Grabber.transform.localPosition = new Vector3(-GrabLength*(Power-10)/10,0, .049f);
         }
 
