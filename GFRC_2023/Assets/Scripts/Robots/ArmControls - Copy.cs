@@ -17,7 +17,7 @@ using UnityEngine.InputSystem.Utilities;
 
 public partial class @ArmControls: IInputActionCollection2, IDisposable
 {
-    public InputActionAsset asset { get; }
+    /*public InputActionAsset asset { get; }
     public @ArmControls()
     {
         asset = InputActionAsset.FromJson(@"{
@@ -253,5 +253,5 @@ public partial class @ArmControls: IInputActionCollection2, IDisposable
         void OnMoveBaseBack(InputAction.CallbackContext context);
         void OnMoveMidForward(InputAction.CallbackContext context);
         void OnMoveMidBack(InputAction.CallbackContext context);
-    }
+    }*/
 }
