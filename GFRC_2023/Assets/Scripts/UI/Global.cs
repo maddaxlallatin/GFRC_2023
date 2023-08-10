@@ -19,7 +19,7 @@ public static class Global
 
     public static string driveTrain;
     public static string manipulator;
-    public static string shape;
+    public static string chasis;
 
     public class databaseEntry
     {
