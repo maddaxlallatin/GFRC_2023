@@ -28,11 +28,11 @@ public class RobotSelection : MonoBehaviour
 
 
 
-     public GameObject HDrive;
-     public GameObject Module;
-     public GameObject CurrentDrive;
+    public GameObject HDrive;
+    public GameObject Module;
+    public GameObject CurrentDrive;
 
-     public GameObject spawnPoint;
+    public GameObject spawnPoint;
 
     private Vector3 ImagePosition = new Vector3(540.6867065429688f, 79.61088562011719f, 0);
     private Vector3 LeftSideImagePos = new Vector3(-512.8449096679688f, 79.61088562011719f, 0);
@@ -89,55 +89,73 @@ public class RobotSelection : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(StartButton);
     }
 
-    public void ArmFillerSelect(){
+    public void ArmFillerSelect()
+    {
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(ArmFiller, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0,0,0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void ClawSelect(){
+    public void ClawSelect()
+    {
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(Claw, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0,0,0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void CubeChuckSelect(){
+    public void CubeChuckSelect()
+    {
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(CubeChuck, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0,.20f,0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, .20f, 0);
     }
 
 
-    public void HDriveSelect(){
+    public void HDriveSelect()
+    {
         Destroy(CurrentDrive);
         CurrentDrive = Instantiate(HDrive, spawnPoint.transform);
-        CurrentDrive.transform.localPosition = new Vector3(0,0,0);
+        CurrentDrive.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void BlueOctBotSelect(){
+    public void BlueOctBotSelect()
+    {
         Destroy(CurrentBot);
         CurrentBot = Instantiate(BlueOctBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0,0,0);
+        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void OrangeOctBotSelect(){
+    public void OrangeOctBotSelect()
+    {
         Destroy(CurrentBot);
         CurrentBot = Instantiate(OrangeOctBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0,0,0);
+        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void BlueSquBotSelect(){
+    public void BlueSquBotSelect()
+    {
         Destroy(CurrentBot);
         CurrentBot = Instantiate(BlueSquBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0,0,0);
+        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void OrangeSquBotSelect(){
+    public void OrangeSquBotSelect()
+    {
         Destroy(CurrentBot);
         CurrentBot = Instantiate(OrangeSquBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0,0,0);
+        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
     }
+    public void StartGame()
+    {
+        chasis = CurrentBot.gameObject.name;
+        manipulator = CurrentManipulator.gameObject.name;
+        driveTrain = CurrentDrive.gameObject.name;
 
+        Debug.Log(chasis);
+        Debug.Log(manipulator);
+        Debug.Log(driveTrain);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("AdamMiladi");
+    }
 
 
 
