@@ -1113,6 +1113,7 @@ GameObject:
   - component: {fileID: 317673482}
   - component: {fileID: 317673484}
   - component: {fileID: 317673485}
+  - component: {fileID: 317673486}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -1158,7 +1159,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317673479}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4bd80e25c7f7e84398a5a58ff16473e, type: 3}
   m_Name: 
@@ -1174,7 +1175,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 317673479}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9383ddd592c47e44eae76eeab3da46ac, type: 3}
   m_Name: 
@@ -1188,6 +1189,29 @@ MonoBehaviour:
   BlueOctBot: {fileID: 627962477509650417, guid: 6520f176f29b12c4c9a726fc4c78a553, type: 3}
   OrangeSquBot: {fileID: 3351232486877566760, guid: 85aca9883c38ae840b8b891ff65c17ed, type: 3}
   BlueSquBot: {fileID: 8081510017861505659, guid: ccaeee2ae7a3f1648b22b4e373fba967, type: 3}
+--- !u!114 &317673486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317673479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ba95d75c14bfc4cbaffde0abe34017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Claw: {fileID: 7417748658699094112, guid: aff8acfe15925c64a91a49da6cb683c2, type: 3}
+  ArmFiller: {fileID: 5881501181705345975, guid: d498170f25a5fa74192f32a9a7e965c6, type: 3}
+  CubeChuck: {fileID: 7418470450265376584, guid: 45820792c4c79414a8189caa2f5b2d28, type: 3}
+  OrangeOctBot: {fileID: 1712787211374840423, guid: e20fa947c608f03468bc213055050073, type: 3}
+  BlueOctBot: {fileID: 627962477509650417, guid: 5f0d36f99fcc1624da115c10dbb2ec65, type: 3}
+  OrangeSquBot: {fileID: 3351232486877566760, guid: e16c6053d370e9b429aedb1bb70de4d0, type: 3}
+  BlueSquBot: {fileID: 8081510017861505659, guid: c2b0dbbdf3a1b304db20e5074cc8aeea, type: 3}
+  HDrive: {fileID: 8560381772268725819, guid: 95d0a3e63e933124cab93c95d12554f5, type: 3}
+  DriveTrain: {fileID: 0}
+  Module: {fileID: 0}
+  Chasis: {fileID: 0}
 --- !u!1 &329092518
 GameObject:
   m_ObjectHideFlags: 0
