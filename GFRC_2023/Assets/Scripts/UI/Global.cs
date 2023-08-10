@@ -16,6 +16,10 @@ public static class Global
     public static bool isSignedIn = false;
     public static string username = "";
 
+    public static string driveTrain;
+    public static string manipulator;
+    public static string shape;
+
     public class databaseEntry
     {
         public string username;
