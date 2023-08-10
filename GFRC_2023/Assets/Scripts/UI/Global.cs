@@ -17,6 +17,10 @@ public static class Global
     public static string username = "";
     public static int points = 0;
 
+    public static string driveTrain;
+    public static string manipulator;
+    public static string shape;
+
     public class databaseEntry
     {
         public string username;
