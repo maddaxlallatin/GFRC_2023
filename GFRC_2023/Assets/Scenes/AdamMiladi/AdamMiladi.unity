@@ -1218,6 +1218,8 @@ MonoBehaviour:
   BlueOctBot: {fileID: 627962477509650417, guid: 5f0d36f99fcc1624da115c10dbb2ec65, type: 3}
   OrangeSquBot: {fileID: 3351232486877566760, guid: e16c6053d370e9b429aedb1bb70de4d0, type: 3}
   BlueSquBot: {fileID: 8081510017861505659, guid: c2b0dbbdf3a1b304db20e5074cc8aeea, type: 3}
+  OrangePentaBot: {fileID: 5218119126741187450, guid: a5e4764a183e2184a808dd3ac6207e36, type: 3}
+  BluePentaBot: {fileID: 7435434140002518030, guid: 144112ad797a86a46b723a43a4e6b959, type: 3}
   HDrive: {fileID: 8560381772268725819, guid: 95d0a3e63e933124cab93c95d12554f5, type: 3}
   DriveTrain: {fileID: 0}
   Module: {fileID: 0}

@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Manipulator Two
+  m_text: Chassis
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0cb4d5e23df81c448beaec887539e74f, type: 2}
   m_sharedMaterial: {fileID: -348370400137243809, guid: 0cb4d5e23df81c448beaec887539e74f, type: 2}
@@ -2460,6 +2460,8 @@ MonoBehaviour:
   BlueOctBot: {fileID: 627962477509650417, guid: 5f0d36f99fcc1624da115c10dbb2ec65, type: 3}
   OrangeSquBot: {fileID: 3351232486877566760, guid: e16c6053d370e9b429aedb1bb70de4d0, type: 3}
   BlueSquBot: {fileID: 8081510017861505659, guid: c2b0dbbdf3a1b304db20e5074cc8aeea, type: 3}
+  OrangePentaBot: {fileID: 5218119126741187450, guid: a5e4764a183e2184a808dd3ac6207e36, type: 3}
+  BluePentaBot: {fileID: 7435434140002518030, guid: 144112ad797a86a46b723a43a4e6b959, type: 3}
   HDrive: {fileID: 8560381772268725819, guid: 95d0a3e63e933124cab93c95d12554f5, type: 3}
   Module: {fileID: 0}
   CurrentDrive: {fileID: 0}
@@ -2879,7 +2881,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Circle
+  m_text: Pentagon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0cb4d5e23df81c448beaec887539e74f, type: 2}
   m_sharedMaterial: {fileID: -348370400137243809, guid: 0cb4d5e23df81c448beaec887539e74f, type: 2}
@@ -13546,7 +13548,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1776073079}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 323459336}
+        m_TargetAssemblyTypeName: RobotSelection, Assembly-CSharp
+        m_MethodName: BluePentaBotSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1797738669
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class RobotSelection : MonoBehaviour
     public GameObject BlueOctBot;
     public GameObject OrangeSquBot;
     public GameObject BlueSquBot;
+    public GameObject OrangePentaBot;
+    public GameObject BluePentaBot;
 
 
 
@@ -143,6 +145,18 @@ public class RobotSelection : MonoBehaviour
     {
         Destroy(CurrentBot);
         CurrentBot = Instantiate(OrangeSquBot, spawnPoint.transform);
+        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
+    }
+     public void OrangePentaBotSelect()
+    {
+        Destroy(CurrentBot);
+        CurrentBot = Instantiate(OrangePentaBot, spawnPoint.transform);
+        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
+    }
+    public void BluePentaBotSelect()
+    {
+        Destroy(CurrentBot);
+        CurrentBot = Instantiate(BluePentaBot, spawnPoint.transform);
         CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
     }
     public void StartGame()
