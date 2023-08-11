@@ -8,11 +8,17 @@ public class BotChange : MonoBehaviour
     public bool OrangeSquCheck = false;
     public bool BlueOctCheck = false;
     public bool BlueSquCheck = false;
+    public bool OrangePentCheck = false;
+    public bool BluePentCheck = false;
     public GameObject OrangeOctBot;
     public GameObject CurrentBot;
     public GameObject BlueOctBot;
     public GameObject OrangeSquBot;
     public GameObject BlueSquBot;
+    public GameObject OrangePentBot;
+    public GameObject BluePentBot;
+
+    public int Bot = 0;
 
     void Start()
     {
@@ -29,7 +35,12 @@ public class BotChange : MonoBehaviour
         BlueOctCheck = true;
         OrangeOctCheck = false;
         OrangeSquCheck = false;
-        BlueSquCheck = false;}
+        BlueSquCheck = false;
+        OrangePentCheck = false;
+        BluePentCheck = false;
+        
+        Bot = 0;
+        }
 
     if (Input.GetKeyDown("o") && OrangeOctCheck == false){
         Destroy(CurrentBot); 
@@ -38,7 +49,12 @@ public class BotChange : MonoBehaviour
         OrangeOctCheck = true;
         BlueOctCheck = false;
         OrangeSquCheck = false;
-        BlueSquCheck = false;}
+        BlueSquCheck = false;
+        OrangePentCheck = false;
+        BluePentCheck = false;
+        
+        Bot = 1;
+        }
 
     if (Input.GetKeyDown("i") && OrangeSquCheck == false){
         Destroy(CurrentBot); 
@@ -47,7 +63,12 @@ public class BotChange : MonoBehaviour
         OrangeSquCheck = true;
         BlueOctCheck = false;
         OrangeOctCheck = false;
-        BlueSquCheck = false;}
+        BlueSquCheck = false;
+        OrangePentCheck = false;
+        BluePentCheck = false;
+        
+        Bot = 2;
+        }
 
     if (Input.GetKeyDown("u") && BlueSquCheck == false){
         Destroy(CurrentBot); 
@@ -56,6 +77,39 @@ public class BotChange : MonoBehaviour
         BlueSquCheck = true;
         OrangeSquCheck = false;
         BlueOctCheck = false;
-        OrangeOctCheck = false;}
+        OrangeOctCheck = false;
+        OrangePentCheck = false;
+        BluePentCheck = false;
+        
+        Bot = 3;
+        }
+
+    if (Input.GetKeyDown("y") && OrangePentCheck == false){
+        Destroy(CurrentBot); 
+        CurrentBot = Instantiate(OrangePentBot,transform);
+        CurrentBot.transform.localPosition = new Vector3(0,0,0);
+        BlueSquCheck = false;
+        OrangeSquCheck = false;
+        BlueOctCheck = false;
+        OrangeOctCheck = false;
+        OrangePentCheck = true;
+        BluePentCheck = false;
+        
+        Bot = 4;
+        }
+
+    if (Input.GetKeyDown("t") && BluePentCheck == false){
+        Destroy(CurrentBot); 
+        CurrentBot = Instantiate(BluePentBot,transform);
+        CurrentBot.transform.localPosition = new Vector3(0,0,0);
+        BlueSquCheck = false;
+        OrangeSquCheck = false;
+        BlueOctCheck = false;
+        OrangeOctCheck = false;
+        OrangePentCheck = false;
+        BluePentCheck = true;
+        
+        Bot = 5;
+        }
     }
 }

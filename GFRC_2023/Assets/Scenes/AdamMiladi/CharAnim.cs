@@ -13,13 +13,10 @@ public class CharAnim : MonoBehaviour
     public GameObject SideC;
     public float S1Angle = 34.25f;
     public float S2Angle = 34.25f;
-    public float Mem1 = 0f;
-    public float Mem2 = 0f;
     // Start is called before the first frame update
     void Start()
     {
-            Debug.Log(-(-0.93882f+.38542f*Mathf.Cos(34.25f*Mathf.PI/180)-.38542f*Mathf.Cos((-34.25f+57.5f)*Mathf.PI/180)));
-            Debug.Log(-0.93882f+.38542f*Mathf.Cos(34.25f*Mathf.PI/180)-.38542f*Mathf.Cos((-34.25f+57.5f)*Mathf.PI/180));
+        
     }
 
     // Update is called once per frame
