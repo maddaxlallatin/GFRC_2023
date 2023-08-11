@@ -13,6 +13,8 @@ public class RobotSpawner : MonoBehaviour
     public GameObject BlueOctBot;
     public GameObject OrangeSquBot;
     public GameObject BlueSquBot;
+    public GameObject OrangePentaBot;
+    public GameObject BluePentaBot;
 
     public GameObject HDrive;
 
@@ -65,6 +67,12 @@ public class RobotSpawner : MonoBehaviour
                 break;
             case "OrangeSquBotUIVERSION":
                 Chasis = OrangeSquBot;
+                break;
+            case "BluePentBotUIVERSION":
+                Chasis = BluePentaBot;
+                break;
+            case "OrangePentBotUIVERSION":
+                Chasis = OrangePentaBot;
                 break;
         }
 
