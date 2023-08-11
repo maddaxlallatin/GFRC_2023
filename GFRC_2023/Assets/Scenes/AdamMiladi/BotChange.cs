@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using static Global;
 public class BotChange : MonoBehaviour
 {
     public bool OrangeOctCheck = true;
@@ -22,6 +22,7 @@ public class BotChange : MonoBehaviour
 
     void Start()
     {
+        if(chasis != null) return;
         CurrentBot = Instantiate(OrangeOctBot,transform);
         OrangeOctCheck = true; 
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Global;
 
 public class WheelChange : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class WheelChange : MonoBehaviour
 
     void Start()
     {
+        if(driveTrain != null) return;
         Module = Instantiate(HDrive,transform);
     }
 
