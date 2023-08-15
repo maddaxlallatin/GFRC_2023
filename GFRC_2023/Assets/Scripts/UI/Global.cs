@@ -12,10 +12,19 @@ public static class Global
     const string databaseLayout = "users (username VARCHAR(16), password VARCHAR(16), points INT, teamnumber VARCHAR(16), build VARCHAR(16), unixtime VARCHAR(16));";
     private const string DB_TABLE_LAYOUT = "users (username VARCHAR(16), pin VARCHAR(4), teamnumber VARCHAR(16), points INT, build VARCHAR(16), unixtime VARCHAR(16));";
 
+    public static bool[] redcRowArray = new bool[] {false, false, false, false, false, false, false, false, false };
+    public static bool[] redbRowArray = new bool[] {false, false, false, false, false, false, false, false, false };
+    public static bool[] redaRowArray = new bool[] {false, false, false, false, false, false, false, false, false };
+    public static bool[] bluecRowArray = new bool[] {false, false, false, false, false, false, false, false, false };
+    public static bool[] bluebRowArray = new bool[] {false, false, false, false, false, false, false, false, false };
+    public static bool[] blueaRowArray = new bool[] {false, false, false, false, false, false, false, false, false };
+
 
     public static bool isSignedIn = false;
     public static string username = "";
     public static int points = 0;
+    public static int redlinks = 0;
+    public static int bluelinks = 0;
 
     public static string driveTrain;
     public static string manipulator;
