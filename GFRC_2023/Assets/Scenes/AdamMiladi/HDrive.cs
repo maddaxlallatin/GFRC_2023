@@ -48,6 +48,7 @@ public class HDrive : MonoBehaviour
 
         locVel = transform.InverseTransformDirection(rb.velocity);
 
+    //break system
         if (Input.GetKey("d") == false && locVel.x > 1)
         {
             UW.Accelerate(-locVel.x * BreakPower);

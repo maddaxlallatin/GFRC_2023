@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e895e96e651f0cb439733053abcb13fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DrivePower: 65
+  DrivePower: 55
   BreakPower: 25
   TurnPower: 20
   torque: 100
