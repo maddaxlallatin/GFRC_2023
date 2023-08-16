@@ -117,6 +117,7 @@ public class ScoringManager : MonoBehaviour
                         }
                     }
                     break;
+            }
 
 
 
@@ -125,10 +126,10 @@ public class ScoringManager : MonoBehaviour
 
 
 
-
-
+switch (gameObject.name.Substring(0, 5))
+            {
                 case "bluea":
-                    blueaRowArray[gameObject.name[4] - '1'] = true;
+                    blueaRowArray[gameObject.name[5] - '1'] = true;
                     foreach (bool b in blueaRowArray)
                     {
                         Debug.Log(b);
@@ -150,7 +151,7 @@ public class ScoringManager : MonoBehaviour
                     break;
 
                 case "blueb":
-                    bluebRowArray[gameObject.name[4] - '1'] = true;
+                    bluebRowArray[gameObject.name[5] - '1'] = true;
                     foreach (bool b in bluebRowArray)
                     {
                         Debug.Log(b);
@@ -174,7 +175,7 @@ public class ScoringManager : MonoBehaviour
 
 
                 case "bluec":
-                    bluecRowArray[gameObject.name[4] - '1'] = true;
+                    bluecRowArray[gameObject.name[5] - '1'] = true;
                     foreach (bool b in bluecRowArray)
                     {
                         Debug.Log(b);
@@ -300,7 +301,9 @@ public class ScoringManager : MonoBehaviour
                     break;
 
 
-
+            }
+            switch (gameObject.name.Substring(0, 5))
+            {
 
 
 
@@ -310,7 +313,7 @@ public class ScoringManager : MonoBehaviour
 
                 case "bluea":
                     bluelinks = 0;
-                    blueaRowArray[gameObject.name[4] - '1'] = false;
+                    blueaRowArray[gameObject.name[5] - '1'] = false;
                     foreach (bool b in blueaRowArray)
                     {
                         Debug.Log(b);
@@ -333,7 +336,7 @@ public class ScoringManager : MonoBehaviour
 
                 case "blueb":
                     bluelinks = 0;
-                    bluebRowArray[gameObject.name[4] - '1'] = false;
+                    bluebRowArray[gameObject.name[5] - '1'] = false;
                     foreach (bool b in bluebRowArray)
                     {
                         Debug.Log(b);
@@ -358,7 +361,7 @@ public class ScoringManager : MonoBehaviour
 
                 case "bluec":
                     bluelinks = 0;
-                    bluecRowArray[gameObject.name[4] - '1'] = false;
+                    bluecRowArray[gameObject.name[5] - '1'] = false;
                     foreach (bool b in bluecRowArray)
                     {
                         Debug.Log(b);
