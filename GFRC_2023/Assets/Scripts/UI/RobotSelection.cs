@@ -4,6 +4,9 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.EventSystems;
 using static Global;
+using UnityEngine.UI;
+using Unity.Burst.Intrinsics;
+
 public class RobotSelection : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -16,9 +19,22 @@ public class RobotSelection : MonoBehaviour
 
 
     public GameObject CurrentManipulator;
-    public GameObject Claw;
-    public GameObject ArmFiller;
-    public GameObject CubeChuck;
+    private GameObject Claw;
+    private GameObject ArmFiller;
+    private GameObject CubeChuck;
+
+
+    public GameObject BlueClaw;
+    public GameObject BlueArmFiller;
+    public GameObject BlueCubeChuck;
+    public GameObject OrangeClaw;
+    public GameObject OrangeArmFiller;
+    public GameObject OrangeCubeChuck;
+
+
+    private GameObject OctBot;
+    private GameObject SquBot;
+    private GameObject PentaBot;
 
     public GameObject CurrentBot;
     public GameObject OrangeOctBot;
@@ -28,7 +44,7 @@ public class RobotSelection : MonoBehaviour
     public GameObject OrangePentaBot;
     public GameObject BluePentaBot;
 
-
+    public bool isOrange = false;
 
     public GameObject HDrive;
     public GameObject Module;
@@ -43,7 +59,7 @@ public class RobotSelection : MonoBehaviour
     void Start()
     {
         CurrentImage = DriveImages;
-        CurrentManipulator = Instantiate(ArmFiller, spawnPoint.transform);
+        CurrentManipulator = Instantiate(BlueArmFiller, spawnPoint.transform);
         CurrentDrive = Instantiate(HDrive, spawnPoint.transform);
         CurrentBot = Instantiate(BlueOctBot, spawnPoint.transform);
 
@@ -93,6 +109,14 @@ public class RobotSelection : MonoBehaviour
 
     public void ArmFillerSelect()
     {
+        if (isOrange)
+        {
+            ArmFiller = OrangeArmFiller;
+        }
+        else
+        {
+            ArmFiller = BlueArmFiller;
+        }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(ArmFiller, spawnPoint.transform);
         CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
@@ -100,6 +124,14 @@ public class RobotSelection : MonoBehaviour
 
     public void ClawSelect()
     {
+        if (isOrange)
+        {
+            Claw = OrangeClaw;
+        }
+        else
+        {
+            Claw = BlueClaw;
+        }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(Claw, spawnPoint.transform);
         CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
@@ -107,6 +139,14 @@ public class RobotSelection : MonoBehaviour
 
     public void CubeChuckSelect()
     {
+        if (isOrange)
+        {
+            CubeChuck = OrangeCubeChuck;
+        }
+        else
+        {
+            CubeChuck = BlueCubeChuck;
+        }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(CubeChuck, spawnPoint.transform);
         CurrentManipulator.transform.localPosition = new Vector3(0, .20f, 0);
@@ -120,43 +160,51 @@ public class RobotSelection : MonoBehaviour
         CurrentDrive.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void BlueOctBotSelect()
+    public void OctBotSelect()
     {
+        if (isOrange)
+        {
+            OctBot = OrangeOctBot;
+        }
+        else
+        {
+            OctBot = BlueOctBot;
+        }
+
+
         Destroy(CurrentBot);
-        CurrentBot = Instantiate(BlueOctBot, spawnPoint.transform);
+        CurrentBot = Instantiate(OctBot, spawnPoint.transform);
         CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void OrangeOctBotSelect()
+
+    public void SquBotSelect()
     {
+        if (isOrange)
+        {
+            SquBot = OrangeSquBot;
+        }
+        else
+        {
+            SquBot = BlueSquBot;
+        }
         Destroy(CurrentBot);
-        CurrentBot = Instantiate(OrangeOctBot, spawnPoint.transform);
+        CurrentBot = Instantiate(SquBot, spawnPoint.transform);
         CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
     }
 
-    public void BlueSquBotSelect()
+    public void PentaBotSelect()
     {
+        if (isOrange)
+        {
+            PentaBot = OrangePentaBot;
+        }
+        else
+        {
+            PentaBot = BluePentaBot;
+        }
         Destroy(CurrentBot);
-        CurrentBot = Instantiate(BlueSquBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
-    }
-
-    public void OrangeSquBotSelect()
-    {
-        Destroy(CurrentBot);
-        CurrentBot = Instantiate(OrangeSquBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
-    }
-     public void OrangePentaBotSelect()
-    {
-        Destroy(CurrentBot);
-        CurrentBot = Instantiate(OrangePentaBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
-    }
-    public void BluePentaBotSelect()
-    {
-        Destroy(CurrentBot);
-        CurrentBot = Instantiate(BluePentaBot, spawnPoint.transform);
+        CurrentBot = Instantiate(PentaBot, spawnPoint.transform);
         CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
     }
     public void StartGame()
@@ -173,7 +221,38 @@ public class RobotSelection : MonoBehaviour
 
 
 
+    public void ToggleColor()
+    {
+        isOrange = !isOrange;
+        if (isOrange)
+        {
+            Destroy(CurrentManipulator);
+            
+            Instantiate(Resources.Load(CurrentManipulator.gameObject.name.Replace("Blue", "Orange").Replace("(Clone)", "")), spawnPoint.transform);
+            CurrentManipulator = GameObject.Find(CurrentManipulator.gameObject.name.Replace("Blue", "Orange"));
+            Destroy(CurrentBot);
+            Instantiate(Resources.Load(CurrentBot.gameObject.name.Replace("Blue", "Orange").Replace("(Clone)", "")), spawnPoint.transform);
+            CurrentBot = GameObject.Find(CurrentBot.gameObject.name.Replace("Blue", "Orange"));
+            if(CurrentManipulator == GameObject.Find("OrangeCubeChuckerUIVERSION(Clone)") || CurrentManipulator == GameObject.Find("BlueCubeChuckerUIVERSION(Clone)")){
+                        CurrentManipulator.transform.localPosition = new Vector3(0, .20f, 0);
 
+            }
+        }
+        else
+        {
+            Destroy(CurrentManipulator);
+            Instantiate(Resources.Load(CurrentManipulator.gameObject.name.Replace("Orange", "Blue").Replace("(Clone)", "")), spawnPoint.transform);
+            CurrentManipulator = GameObject.Find(CurrentManipulator.gameObject.name.Replace("Orange", "Blue"));
+            Destroy(CurrentBot);
+            Instantiate(Resources.Load(CurrentBot.gameObject.name.Replace("Orange", "Blue").Replace("(Clone)", "")), spawnPoint.transform);
+            CurrentBot = GameObject.Find(CurrentBot.gameObject.name.Replace("Orange", "Blue"));
+            if(CurrentManipulator == GameObject.Find("OrangeCubeChuckerUIVERSION(Clone)") || CurrentManipulator == GameObject.Find("BlueCubeChuckerUIVERSION(Clone)")){
+                        CurrentManipulator.transform.localPosition = new Vector3(0, .20f, 0);
+
+            }
+        }
+
+    }
 
 
 
