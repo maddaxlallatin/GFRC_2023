@@ -52,9 +52,9 @@ public class RobotSelection : MonoBehaviour
 
     public GameObject spawnPoint;
 
-    private Vector3 ImagePosition = new Vector3(540.6867065429688f, 79.61088562011719f, 0);
-    private Vector3 LeftSideImagePos = new Vector3(-512.8449096679688f, 79.61088562011719f, 0);
-    private Vector3 RightSideImagePos = new Vector3(1497.155029296875f, 79.61088562011719f, 0);
+    private Vector3 ImagePosition;
+    private Vector3 LeftSideImagePos;
+    private Vector3 RightSideImagePos;
     private float animSpeed = 1.0f;
     void Start()
     {
@@ -62,6 +62,9 @@ public class RobotSelection : MonoBehaviour
         CurrentManipulator = Instantiate(BlueArmFiller, spawnPoint.transform);
         CurrentDrive = Instantiate(HDrive, spawnPoint.transform);
         CurrentBot = Instantiate(BlueOctBot, spawnPoint.transform);
+        ImagePosition = CurrentImage.transform.position;
+        RightSideImagePos = ManipulatorOneImages.transform.position;
+        LeftSideImagePos = new Vector3((ImagePosition.x * -1), RightSideImagePos.y, RightSideImagePos.z);
 
     }
     public void DriveImageSelected()
@@ -119,7 +122,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(ArmFiller, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0, .03f, 0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
     }
 
     public void ClawSelect()
@@ -134,7 +137,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(Claw, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0, .03f, 0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
     }
 
     public void CubeChuckSelect()
@@ -149,7 +152,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(CubeChuck, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0, .21f, 0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, .20f, 0);
     }
 
 

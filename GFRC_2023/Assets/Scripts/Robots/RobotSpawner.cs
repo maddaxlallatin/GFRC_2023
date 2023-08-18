@@ -5,9 +5,13 @@ using static Global;
 public class RobotSpawner : MonoBehaviour
 {
 
-    public GameObject Claw;
-    public GameObject ArmFiller;
-    public GameObject CubeChuck;
+    public GameObject BlueClaw;
+    public GameObject BlueArmFiller;
+    public GameObject BlueCubeChuck;
+    public GameObject OrangeClaw;
+    public GameObject OrangeArmFiller;
+    public GameObject OrangeCubeChuck;
+
 
     public GameObject OrangeOctBot;
     public GameObject BlueOctBot;
@@ -37,13 +41,22 @@ public class RobotSpawner : MonoBehaviour
         switch (manipulator.TrimEnd(MyChar))
         {
             case "BlueCircleClawUIVERSION":
-                Module = Claw;
+                Module = BlueClaw;
                 break;
             case "BlueArmFillerUIVERSION":
-                Module = ArmFiller;
+                Module = BlueArmFiller;
                 break;
             case "BlueCubeChuckerUIVERSION":
-                Module = CubeChuck;
+                Module = BlueCubeChuck;
+                break;
+                case "OrangeCircleClawUIVERSION":
+                Module = OrangeClaw;
+                break;
+            case "OrangeArmFillerUIVERSION":
+                Module = OrangeArmFiller;
+                break;
+            case "OrangeCubeChuckerUIVERSION":
+                Module = OrangeCubeChuck;
                 break;
         }
 
@@ -81,13 +94,13 @@ public class RobotSpawner : MonoBehaviour
 
         SpawnedDriveTrain = Instantiate(DriveTrain, transform);
         SpawnedModule = Instantiate(Module, transform);
-        if (Module == CubeChuck)
+        if (Module == BlueCubeChuck || Module == OrangeCubeChuck)
         {
-            SpawnedModule.transform.localPosition = new Vector3(0, .21f, 0);
+            SpawnedModule.transform.localPosition = new Vector3(0, .18f, 0);
         }
         else
         {
-            SpawnedModule.transform.localPosition = new Vector3(0, .03f, 0);
+            Module.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
 
