@@ -21,6 +21,8 @@ public class RobotSpawner : MonoBehaviour
     public GameObject BluePentaBot;
 
     public GameObject HDrive;
+    public GameObject THexDrive;
+    public GameObject CarDrive;
 
     public GameObject DriveTrain;
     public GameObject Module;
@@ -65,6 +67,12 @@ public class RobotSpawner : MonoBehaviour
             case "H+DriveUIVERSION":
                 DriveTrain = HDrive;
                 break;
+            case "THexDriveUIVERSION":
+                DriveTrain = THexDrive;
+                break;
+            case "CarDriveUIVERSION":
+                DriveTrain = CarDrive;
+                break;
         }
 
         switch (chasis.TrimEnd(MyChar))
@@ -97,10 +105,12 @@ public class RobotSpawner : MonoBehaviour
         if (Module == BlueCubeChuck || Module == OrangeCubeChuck)
         {
             SpawnedModule.transform.localPosition = new Vector3(0, .21f, 0);
+            SpawnedModule.transform.localRotation = Quaternion.Euler(0,180,0);
         }
         else
         {
-            Module.transform.localPosition = new Vector3(0, .03f, 0);
+            SpawnedModule.transform.localPosition = new Vector3(0, .03f, 0);
+            SpawnedModule.transform.localRotation = Quaternion.Euler(0,180,0);
         }
     }
 
