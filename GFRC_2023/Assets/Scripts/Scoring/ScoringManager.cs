@@ -28,7 +28,7 @@ public class ScoringManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collision");
-        if (other.gameObject.tag == "Cube" || other.gameObject.tag == "Cone")
+        if (other.gameObject.tag == "CubeCollect" || other.gameObject.tag == "ConeCollect")
         {
 
             Debug.Log(gameObject.transform.parent.gameObject.name);
@@ -205,7 +205,7 @@ switch (gameObject.name.Substring(0, 5))
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("Collision");
-        if (other.gameObject.tag == "Cube" || other.gameObject.tag == "Cone")
+        if (other.gameObject.tag == "CubeCollect" || other.gameObject.tag == "ConeCollect")
         {
 
             Debug.Log(gameObject.transform.parent.gameObject.name);

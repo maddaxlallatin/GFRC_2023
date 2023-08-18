@@ -119,7 +119,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(ArmFiller, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, .03f, 0);
     }
 
     public void ClawSelect()
@@ -134,7 +134,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(Claw, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, .03f, 0);
     }
 
     public void CubeChuckSelect()
@@ -149,7 +149,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(CubeChuck, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0, .20f, 0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, .21f, 0);
     }
 
 
