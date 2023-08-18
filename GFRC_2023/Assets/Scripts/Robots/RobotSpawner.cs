@@ -96,11 +96,11 @@ public class RobotSpawner : MonoBehaviour
         SpawnedModule = Instantiate(Module, transform);
         if (Module == BlueCubeChuck || Module == OrangeCubeChuck)
         {
-            SpawnedModule.transform.localPosition = new Vector3(0, .18f, 0);
+            SpawnedModule.transform.localPosition = new Vector3(0, .21f, 0);
         }
         else
         {
-            Module.transform.localPosition = new Vector3(0, 0, 0);
+            Module.transform.localPosition = new Vector3(0, .03f, 0);
         }
     }
 

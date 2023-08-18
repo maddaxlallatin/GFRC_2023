@@ -122,7 +122,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(ArmFiller, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, .03f, 0);
     }
 
     public void ClawSelect()
@@ -137,7 +137,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(Claw, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0, 0, 0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, .03f, 0);
     }
 
     public void CubeChuckSelect()
@@ -152,7 +152,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentManipulator);
         CurrentManipulator = Instantiate(CubeChuck, spawnPoint.transform);
-        CurrentManipulator.transform.localPosition = new Vector3(0, .20f, 0);
+        CurrentManipulator.transform.localPosition = new Vector3(0, .21f, 0);
     }
 
 
@@ -160,7 +160,7 @@ public class RobotSelection : MonoBehaviour
     {
         Destroy(CurrentDrive);
         CurrentDrive = Instantiate(HDrive, spawnPoint.transform);
-        CurrentDrive.transform.localPosition = new Vector3(0, 0, 0);
+        CurrentDrive.transform.localPosition = new Vector3(0, .03f, 0);
     }
 
     public void OctBotSelect()
@@ -177,7 +177,7 @@ public class RobotSelection : MonoBehaviour
 
         Destroy(CurrentBot);
         CurrentBot = Instantiate(OctBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
+        CurrentBot.transform.localPosition = new Vector3(0, .03f, 0);
     }
 
 
@@ -193,7 +193,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentBot);
         CurrentBot = Instantiate(SquBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
+        CurrentBot.transform.localPosition = new Vector3(0, .03f, 0);
     }
 
     public void PentaBotSelect()
@@ -208,7 +208,7 @@ public class RobotSelection : MonoBehaviour
         }
         Destroy(CurrentBot);
         CurrentBot = Instantiate(PentaBot, spawnPoint.transform);
-        CurrentBot.transform.localPosition = new Vector3(0, 0, 0);
+        CurrentBot.transform.localPosition = new Vector3(0, .03f, 0);
     }
     public void StartGame()
     {
@@ -237,7 +237,7 @@ public class RobotSelection : MonoBehaviour
             Instantiate(Resources.Load(CurrentBot.gameObject.name.Replace("Blue", "Orange").Replace("(Clone)", "")), spawnPoint.transform);
             CurrentBot = GameObject.Find(CurrentBot.gameObject.name.Replace("Blue", "Orange"));
             if(CurrentManipulator == GameObject.Find("OrangeCubeChuckerUIVERSION(Clone)") || CurrentManipulator == GameObject.Find("BlueCubeChuckerUIVERSION(Clone)")){
-                        CurrentManipulator.transform.localPosition = new Vector3(0, .20f, 0);
+                        CurrentManipulator.transform.localPosition = new Vector3(0, .21f, 0);
 
             }
         }
@@ -250,7 +250,7 @@ public class RobotSelection : MonoBehaviour
             Instantiate(Resources.Load(CurrentBot.gameObject.name.Replace("Orange", "Blue").Replace("(Clone)", "")), spawnPoint.transform);
             CurrentBot = GameObject.Find(CurrentBot.gameObject.name.Replace("Orange", "Blue"));
             if(CurrentManipulator == GameObject.Find("OrangeCubeChuckerUIVERSION(Clone)") || CurrentManipulator == GameObject.Find("BlueCubeChuckerUIVERSION(Clone)")){
-                        CurrentManipulator.transform.localPosition = new Vector3(0, .20f, 0);
+                        CurrentManipulator.transform.localPosition = new Vector3(0, .21f, 0);
 
             }
         }
