@@ -21,6 +21,7 @@ public class AIHeavy : MonoBehaviour
     public GameObject[] Cones;
     public GameObject[] Cubes;
     ItemSpawner FieldObjects;
+    ScoreState ScoreZone;
     public Vector3 Target;
     public Vector3 Path;
     public float RoTarget;
@@ -28,6 +29,7 @@ public class AIHeavy : MonoBehaviour
     void Start()
     {
     FieldObjects = FindObjectOfType<ItemSpawner>();
+    ScoreZone = FindObjectOfType<ScoreState>();
     // Drive = Instantiate(THexDrive,transform);
     // RWheels = Drive.GetComponent<WheelArray>().RWheels;
     // LWheels = Drive.GetComponent<WheelArray>().LWheels;

@@ -87,6 +87,8 @@ public class LongArm : MonoBehaviour
     {
         Movelock = Relay.Movelock;
         Movement();
+        Debug.Log(ArmAngle);
+        Debug.Log(GrabLength);
     }
 
 }

@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 3213317387745209623}
   - component: {fileID: 6402707329427281369}
   - component: {fileID: 3508313406350381152}
-  - component: {fileID: 393964432047934138}
+  - component: {fileID: 1830958149385470395}
   m_Layer: 0
   m_Name: PivotPoint
   m_TagString: Untagged
@@ -415,7 +415,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &393964432047934138
+--- !u!114 &1830958149385470395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2061631944291868216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dba04a853614b14592ac4280f0ffeac, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f38f41d184056b43b1bb1f3c022d20a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GrabAngle: 0
@@ -434,8 +434,12 @@ MonoBehaviour:
   GrabASpeed: 0.2
   Grabber: {fileID: 970400045647449376}
   ExArm: {fileID: 4381270933538378869}
-  Movelock: 0
-  Relay: {fileID: 4727651538496535937}
+  AICone: {fileID: 571474518611159255}
+  AICube: {fileID: 1096777597863865310}
+  CubeIntent: 0
+  ConeIntent: 0
+  AI: {fileID: 7964468107424193141}
+  Full: 0
 --- !u!1 &2103875453877896534
 GameObject:
   m_ObjectHideFlags: 0
