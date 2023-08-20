@@ -67,7 +67,7 @@ public class RobotSpawner : MonoBehaviour
             case "H+DriveUIVERSION":
                 DriveTrain = HDrive;
                 break;
-            case "THexDriveUIVERSION":
+            case "HexTankDriveUIVERSION":
                 DriveTrain = THexDrive;
                 break;
             case "CarDriveUIVERSION":
