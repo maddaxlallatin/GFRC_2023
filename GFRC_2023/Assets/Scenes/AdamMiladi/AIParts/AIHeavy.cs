@@ -5,9 +5,11 @@ public class AIHeavy : MonoBehaviour
 {
     public GameObject FLift;
     public float DrivePower = 8f;
-    public AIGrabCone ConeCheck;
-    public AIGrabCube CubeCheck;
+    public AIGrabCone AICone;
+    public AIGrabCube AICube;
     public bool Searched = false;
+    public bool CubeIntent = false;
+    public bool ConeIntent = false;
     public GameObject Closest;
     public GameObject THexDrive;
     public GameObject Drive;
@@ -53,11 +55,14 @@ public class AIHeavy : MonoBehaviour
 
     void FixedUpdate()
     {
+if (AICone.Full == false && AICube.Full == false)
+{
     Cubes = FieldObjects.FindCubes();
     Target = FindClosestCube();
     // Debug.Log(Target);
     Path = Target - transform.position;
-    // Debug.Log(Path);
+    Debug.Log(Path);
+    // Debug.Log(Path.x*Path.x + Path.z*Path.z);
     
     if (Path.x < 0 && Path.z > 0)
     {
@@ -71,13 +76,14 @@ public class AIHeavy : MonoBehaviour
     {
     RoTarget = 180-(180/Mathf.PI)*Mathf.Atan(Path.z/Path.x);
     }
-    // Debug.Log(RoTarget);
-    // Debug.Log(transform.eulerAngles.y);
+     if (RoTarget < 0) {RoTarget = RoTarget + 360;}
+     Debug.Log(RoTarget);
+     Debug.Log(transform.eulerAngles.y);
 
-    if (transform.eulerAngles.y > RoTarget + .5f || transform.eulerAngles.y < RoTarget - .5f)
+    if (transform.eulerAngles.y > RoTarget + 1f || transform.eulerAngles.y < RoTarget - 1f)
     {
     
-    if (transform.eulerAngles.y - RoTarget > 0)
+    if (transform.eulerAngles.y > RoTarget || transform.eulerAngles.y < RoTarget - 180)
     {
     foreach(Wheel w in RWheels)
     {
@@ -104,9 +110,23 @@ public class AIHeavy : MonoBehaviour
         }
     }
     }
-    else 
+    else if (Path.x*Path.x + Path.z*Path.z > .4f)
     {
-    // Debug.Log("Victory");
+    foreach(Wheel w in RWheels)
+        {
+            w.Accelerate(2*DrivePower);
+            w.UpdatePosition();
+        }
+        foreach(Wheel w in LWheels)
+        {
+            w.Accelerate(2*DrivePower);
+            w.UpdatePosition();
+        }
+    }
+    else
+    {
+        CubeIntent = true;
+        Debug.Log("Victory");
         foreach(Wheel w in RWheels)
         {
             w.Accelerate(0);
@@ -114,11 +134,13 @@ public class AIHeavy : MonoBehaviour
         }
         foreach(Wheel w in LWheels)
         {
-            w.Accelerate(0);
-            w.UpdatePosition();
+        w.Accelerate(0);
+        w.UpdatePosition();
         }
     }
-    }
+}
+
+}
     // void Update()
     // {
     //     if (ConeCheck.Grab == false && CubeCheck.Grab == false && Searched == false)

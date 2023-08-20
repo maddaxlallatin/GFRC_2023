@@ -17,6 +17,7 @@ public class AIGrabCube : MonoBehaviour
 
     void Pickup()
     {
+        CubeIntent = AI.CubeIntent;
         if (CubeIntent == true && Grab == false)
         {
             Grab = true;

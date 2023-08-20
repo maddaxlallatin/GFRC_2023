@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643938512294045685}
   - component: {fileID: 8323634443777707734}
-  - component: {fileID: 62012043594293505}
+  - component: {fileID: 1096777597863865310}
   m_Layer: 0
   m_Name: ColCube
   m_TagString: Untagged
@@ -46,7 +46,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.06, z: 0.25}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &62012043594293505
+--- !u!114 &1096777597863865310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,13 +55,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 432517053718235968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6098b33b4b2cb149b20fb793c9f20bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 95183d88b8d894d4bbcb379723daca77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Grab: 0
   Full: 0
   Checkother: 0
-  ConeCheck: {fileID: 1422233579479081436}
+  ConeCheck: {fileID: 571474518611159255}
+  CubeIntent: 0
+  AI: {fileID: 7964468107424193141}
 --- !u!1 &970400045647449376
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +183,7 @@ Transform:
   m_GameObject: {fileID: 1190877620687798368}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.125, y: 0.05000019, z: -0.17499995}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7244823228720522944}
@@ -229,7 +231,7 @@ Transform:
   m_GameObject: {fileID: 1477436608755293744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.125, y: 0.05000019, z: -0.17499995}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3431691846191764619}
@@ -302,10 +304,10 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 250
-    m_ExtremumValue: 250
-    m_AsymptoteSlip: 250
-    m_AsymptoteValue: 250
+    m_ExtremumSlip: 400
+    m_ExtremumValue: 400
+    m_AsymptoteSlip: 400
+    m_AsymptoteValue: 400
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
@@ -543,7 +545,7 @@ Transform:
   m_GameObject: {fileID: 2108445707035441963}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.125, y: 0.05000019, z: 0.1500001}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4195995560813195966}
@@ -698,9 +700,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FLift: {fileID: 0}
   DrivePower: 8
-  ConeCheck: {fileID: 0}
-  CubeCheck: {fileID: 0}
+  AICone: {fileID: 571474518611159255}
+  AICube: {fileID: 1096777597863865310}
   Searched: 0
+  CubeIntent: 0
+  ConeIntent: 0
   Closest: {fileID: 0}
   THexDrive: {fileID: 7565170749169006857, guid: 5a373910c5954864b922283d3d74e582, type: 3}
   Drive: {fileID: 0}
@@ -1035,10 +1039,10 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 250
-    m_ExtremumValue: 250
-    m_AsymptoteSlip: 250
-    m_AsymptoteValue: 250
+    m_ExtremumSlip: 400
+    m_ExtremumValue: 400
+    m_AsymptoteSlip: 400
+    m_AsymptoteValue: 400
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
@@ -1131,7 +1135,7 @@ Transform:
   m_GameObject: {fileID: 4246100218604330965}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.125, y: 0.05000019, z: 0.1500001}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8994000055272133425}
@@ -1326,7 +1330,7 @@ Transform:
   m_GameObject: {fileID: 5342067156950701843}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.25, y: 0.05000019, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3392035316595678980}
@@ -1482,10 +1486,10 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 250
-    m_ExtremumValue: 250
-    m_AsymptoteSlip: 250
-    m_AsymptoteValue: 250
+    m_ExtremumSlip: 400
+    m_ExtremumValue: 400
+    m_AsymptoteSlip: 400
+    m_AsymptoteValue: 400
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
@@ -1558,10 +1562,10 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 250
-    m_ExtremumValue: 250
-    m_AsymptoteSlip: 250
-    m_AsymptoteValue: 250
+    m_ExtremumSlip: 400
+    m_ExtremumValue: 400
+    m_AsymptoteSlip: 400
+    m_AsymptoteValue: 400
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
@@ -1593,7 +1597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 366120419226182366}
   - component: {fileID: 7967654523861468946}
-  - component: {fileID: 1422233579479081436}
+  - component: {fileID: 571474518611159255}
   m_Layer: 0
   m_Name: ColCone
   m_TagString: Untagged
@@ -1629,7 +1633,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.06, z: 0.22}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1422233579479081436
+--- !u!114 &571474518611159255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1638,13 +1642,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7943114711536978577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f3b9f205dc867740aec410c9c8e657c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b64bb26948163f48a82e5342b358f38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Grab: 0
   Full: 0
   Checkother: 0
-  CubeCheck: {fileID: 62012043594293505}
+  CubeCheck: {fileID: 1096777597863865310}
+  ConeIntent: 0
+  AI: {fileID: 7964468107424193141}
 --- !u!1 &7946814705223273070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,10 +1818,10 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 250
-    m_ExtremumValue: 250
-    m_AsymptoteSlip: 250
-    m_AsymptoteValue: 250
+    m_ExtremumSlip: 400
+    m_ExtremumValue: 400
+    m_AsymptoteSlip: 400
+    m_AsymptoteValue: 400
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
@@ -1862,7 +1868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8150748283323062114}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1921,7 +1927,7 @@ Transform:
   m_GameObject: {fileID: 8314164045817478591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.25, y: 0.05000019, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4782152649814996732}
@@ -2079,10 +2085,10 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 250
-    m_ExtremumValue: 250
-    m_AsymptoteSlip: 250
-    m_AsymptoteValue: 250
+    m_ExtremumSlip: 400
+    m_ExtremumValue: 400
+    m_AsymptoteSlip: 400
+    m_AsymptoteValue: 250400
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
