@@ -164,19 +164,19 @@ public class RobotSelection : MonoBehaviour
     {
         Destroy(CurrentDrive);
         CurrentDrive = Instantiate(HDrive, spawnPoint.transform);
-        CurrentDrive.transform.localPosition = new Vector3(0, .03f, 0);
+        CurrentDrive.transform.localPosition = new Vector3(0, 0, 0);
     }
         public void THexDriveSelect()
     {
         Destroy(CurrentDrive);
         CurrentDrive = Instantiate(THexDrive, spawnPoint.transform);
-        CurrentDrive.transform.localPosition = new Vector3(0, .03f, 0);
+        CurrentDrive.transform.localPosition = new Vector3(0, 0, 0);
     }
         public void CarDriveSelect()
     {
         Destroy(CurrentDrive);
         CurrentDrive = Instantiate(CarDrive, spawnPoint.transform);
-        CurrentDrive.transform.localPosition = new Vector3(0, .03f, 0);
+        CurrentDrive.transform.localPosition = new Vector3(0, 0, 0);
     }
 
     public void OctBotSelect()
