@@ -8,7 +8,7 @@ public class AIGrabCube : MonoBehaviour
     public bool Full = false;
     public bool Checkother = false;
     public AIGrabCone ConeCheck;
-    public bool CubeIntent;
+    public int CubeIntent;
     public AIHeavy AI;
 
     void Start()
@@ -18,12 +18,12 @@ public class AIGrabCube : MonoBehaviour
     void Pickup()
     {
         CubeIntent = AI.CubeIntent;
-        if (CubeIntent == true && Grab == false)
+        if (CubeIntent > 0 && Grab == false)
         {
             Grab = true;
         }
         
-        else if (CubeIntent == false && Grab == true)
+        else if (CubeIntent == 0 && Grab == true)
         {
             Grab = false;
             Full = false;

@@ -13,8 +13,8 @@ public float GrabAngle = 0;
     public GameObject ExArm;
     public AIGrabCone AICone;
     public AIGrabCube AICube;
-    public bool CubeIntent;
-    public bool ConeIntent;
+    public int CubeIntent;
+    public int ConeIntent;
     public AIHeavy AI;
     public bool Full;
 
@@ -25,27 +25,22 @@ public float GrabAngle = 0;
     {
         CubeIntent = AI.CubeIntent;
         ConeIntent = AI.ConeIntent;
-        if (CubeIntent == true || ConeIntent == true)
+
+        if (AICone.Full == true || AICube.Full == true) {Full = true;}
+        else {Full = false;}
+
+        if (CubeIntent == 1 || ConeIntent == 1)
         {
-            if (AICone.Full == true || AICube.Full == true) {Full = true;}
-            else {Full = false;}
-            if (ArmAngle < 28 && Full == false)
+            if (ArmAngle < 28)
             {
                 ArmAngle = ArmAngle + .2f;
                 transform.Rotate(0,0,ArmSpeed,Space.Self);
             } 
         }
-        // if ()
-        // {
-        //     if (ArmAngle > 0)
-        //     {
-        //         ArmAngle = ArmAngle - .2f;
-        //         transform.Rotate(0,0,-ArmSpeed,Space.Self);
-        //     } 
-        // }
-            if (CubeIntent == true || ConeIntent == true)
+
+            if (CubeIntent == 2 || ConeIntent == 2)
         {
-            if (GrabLength < .17f && Full == false)
+            if (GrabLength < .17f)
             {                
                 GrabLength = GrabLength + .01f;
                 Grabber.transform.localPosition = new Vector3(0, GrabLength, 0);
@@ -61,18 +56,42 @@ public float GrabAngle = 0;
                 ExArm.transform.localPosition = new Vector3(-.69f + GrabLength, 0, 0);
             }
         }
-        
-            // if (GrabLength > .73)
-            // {
-            //     GrabLength = GrabLength - .01f;
-            //     ExArm.transform.localPosition = new Vector3(-.69f + GrabLength, 0, 0);
-            // } 
-            // else
-            //     if (GrabLength > 0)
-            //     {
-            //         GrabLength = GrabLength - .01f;
-            //         Grabber.transform.localPosition = new Vector3(0, GrabLength, 0);
-            //     }
+
+        if (CubeIntent == 3 || ConeIntent == 3)
+        {
+            if (ArmAngle < 38)
+            {
+                ArmAngle = ArmAngle + .2f;
+                transform.Rotate(0,0,ArmSpeed,Space.Self);
+            } 
+        }
+
+            if (CubeIntent == 3 || ConeIntent == 3)
+        {
+            if (GrabLength < .17f)
+            {                
+                GrabLength = GrabLength + .01f;
+                Grabber.transform.localPosition = new Vector3(0, GrabLength, 0);
+            } 
+            else if (GrabLength < .73f && Full == true)
+            {
+                GrabLength = GrabLength + .01f;
+                Grabber.transform.localPosition = new Vector3(0, GrabLength, 0);
+            }
+            else if (GrabLength < 1.46f && Full == true)
+            {
+                GrabLength = GrabLength + .01f;
+                ExArm.transform.localPosition = new Vector3(-.69f + GrabLength, 0, 0);
+            }
+        }
+            if (CubeIntent == 3 || ConeIntent == 3)
+        {
+            if (GrabAngle < 20f)
+            {                
+                GrabAngle = GrabAngle + .2f;
+                Grabber.transform.Rotate(0,0,-GrabASpeed,Space.Self);
+            } 
+        }
         
     }
 

@@ -4,22 +4,34 @@ using UnityEngine;
 
 public class ScoreState : MonoBehaviour
 {
-    public GameObject[3] RCu3;
-    public GameObject[3] RCu2;
-    public GameObject[6] RCo3;
-    public GameObject[6] RCo2;
-    public GameObject[3] BCu3;
-    public GameObject[3] BCu2;
-    public GameObject[6] BCo3;
-    public GameObject[6] BCo2;
-    public GameObject[9] RM;
-    public GameObject[9] BM;
+    public List<GameObject> RCu3;
+    public List<GameObject> RCu2;
+    public List<GameObject> RCo3;
+    public List<GameObject> RCo2;
+    public List<GameObject> BCu3;
+    public List<GameObject> BCu2;
+    public List<GameObject> BCo3;
+    public List<GameObject> BCo2;
+    public List<GameObject> RM;
+    public List<GameObject> BM;
 
-    public GameObject[] FindCubes()
+    public List<GameObject> FindRCu3()
     {
-        Cubes = GameObject.FindGameObjectsWithTag("CubeCollect");
-        return Cubes;
+    for (int i = 0; i < RCu3.Count; i++)
+    {
+        if (RCu3[i].tag == "Full")
+        {
+            RCu3.Remove(RCu3[i]);
+        }
     }
+    return RCu3;
+    }
+
+    // public GameObject[] FindCubes()
+    // {
+    //     Cubes = GameObject.FindGameObjectsWithTag("CubeCollect");
+    //     return Cubes;
+    // }
 
 
     void Start()
