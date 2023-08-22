@@ -33,7 +33,7 @@ public class ScoreState : MonoBehaviour
     //     return Cubes;
     // }
 
-*/
+
     void Start()
     {
         
