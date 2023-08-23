@@ -44,8 +44,6 @@ public class RobotSelection : MonoBehaviour
     public GameObject OrangePentaBot;
     public GameObject BluePentaBot;
 
-    public bool isOrange = false;
-
     public GameObject HDrive;
     public GameObject CarDrive;
     public GameObject THexDrive;

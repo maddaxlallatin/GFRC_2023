@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class CubeChuck : MonoBehaviour
 {
+    private Gamepad gamepad;
+
     public float GrabLength = 0;
     public float ArmAngle = 0;
     public GameObject Grabber;
@@ -20,12 +24,14 @@ public class CubeChuck : MonoBehaviour
     public CollisionRelay Relay;
 
     void Start()
-    {}
+    {
+        gamepad = Gamepad.current; 
+    }
 
     void Movement() 
     {
         SlingShot = FCheck.SlingShot;
-        if (Input.GetKey("e") && SlingShot == false)
+        if (gamepad != null && gamepad.rightTrigger.isPressed == true && SlingShot == false|| Input.GetKey("e") && SlingShot == false)
         {
             Full = FCheck.Full;
             if (ArmAngle < 180 && GrabLength < .16f && Full == false)
@@ -45,7 +51,7 @@ public class CubeChuck : MonoBehaviour
                 Grabber.transform.localPosition = new Vector3(GrabLength, 0, .049f);
             }
         }
-        if (Input.GetKey("q") && SlingShot == false)
+        if (gamepad != null && gamepad.leftTrigger.isPressed == true && SlingShot == false||Input.GetKey("q") && SlingShot == false)
         {
             Full = FCheck.Full;
 

@@ -71,6 +71,7 @@ public class ScoringManager : MonoBehaviour
                             Debug.Log("3 In A Row " + redaCount / 3 + " Times");
                             redALinks = redaCount / 3;
                             redlinks = redALinks + redBLinks + redCLinks;
+                            points = points + ((redlinks + bluelinks )* 5); 
                         }
                     }
                     break;
@@ -95,6 +96,7 @@ public class ScoringManager : MonoBehaviour
                             Debug.Log("3 In B Row " + redbCount / 3 + " Times");
                             redBLinks = redbCount / 3;
                             redlinks = redALinks + redBLinks + redCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
 
                         }
                     }
@@ -102,8 +104,6 @@ public class ScoringManager : MonoBehaviour
 
 
                 case "redc":
-                if(other.gameObject.tag == "ConeCollect" && gameObject.transform.parent.gameObject.transform.parent.name != "Cones") return;
-                    if(other.gameObject.tag == "CubeCollect" && gameObject.transform.parent.gameObject.transform.parent.name != "Cubes") return;
                     redcRowArray[gameObject.name[4] - '1'] = true;
                     foreach (bool b in redcRowArray)
                     {
@@ -121,6 +121,7 @@ public class ScoringManager : MonoBehaviour
                             Debug.Log("3 In C Row " + redcCount / 3 + " Times");
                             redCLinks = redcCount / 3;
                             redlinks = redALinks + redBLinks + redCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
 
                         }
                     }
@@ -154,6 +155,7 @@ switch (gameObject.name.Substring(0, 5))
                             Debug.Log("3 In A Row " + blueaCount / 3 + " Times");
                             blueALinks = blueaCount / 3;
                             bluelinks = blueALinks + blueBLinks + blueCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
                         }
                     }
                     break;
@@ -178,6 +180,7 @@ switch (gameObject.name.Substring(0, 5))
                             Debug.Log("3 In B Row " + bluebCount / 3 + " Times");
                             blueBLinks = bluebCount / 3;
                             bluelinks = blueALinks + blueBLinks + blueCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
 
                         }
                     }
@@ -185,8 +188,6 @@ switch (gameObject.name.Substring(0, 5))
 
 
                 case "bluec":
-                if(other.gameObject.tag == "ConeCollect" && gameObject.transform.parent.gameObject.transform.parent.name != "Cones") return;
-                    if(other.gameObject.tag == "CubeCollect" && gameObject.transform.parent.gameObject.transform.parent.name != "Cubes") return;
                     bluecRowArray[gameObject.name[5] - '1'] = true;
                     foreach (bool b in bluecRowArray)
                     {
@@ -204,6 +205,7 @@ switch (gameObject.name.Substring(0, 5))
                             Debug.Log("3 In C Row " + bluecCount / 3 + " Times");
                             blueCLinks = bluecCount / 3;
                             bluelinks = blueALinks + blueBLinks + blueCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
 
                         }
                     }
@@ -261,6 +263,7 @@ switch (gameObject.name.Substring(0, 5))
                             Debug.Log("3 In A Row " + redaCount / 3 + " Times");
                             redALinks = redaCount / 3;
                             redlinks = redALinks + redBLinks + redCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
                         }
                     }
                     break;
@@ -287,6 +290,7 @@ switch (gameObject.name.Substring(0, 5))
                             Debug.Log("3 In B Row " + redbCount / 3 + " Times");
                             redBLinks = redbCount / 3;
                             redlinks = redALinks + redBLinks + redCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
 
                         }
                     }
@@ -315,6 +319,7 @@ switch (gameObject.name.Substring(0, 5))
                             Debug.Log("3 In C Row " + redcCount / 3 + " Times");
                             redCLinks = redcCount / 3;
                             redlinks = redALinks + redBLinks + redCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
 
                         }
                     }
@@ -350,6 +355,7 @@ switch (gameObject.name.Substring(0, 5))
                             Debug.Log("3 In A Row " + blueaCount / 3 + " Times");
                             blueALinks = blueaCount / 3;
                             bluelinks = blueALinks + blueBLinks + blueCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
                         }
                     }
                     break;
@@ -375,6 +381,7 @@ switch (gameObject.name.Substring(0, 5))
                             Debug.Log("3 In B Row " + bluebCount / 3 + " Times");
                             blueBLinks = bluebCount / 3;
                             bluelinks = blueALinks + blueBLinks + blueCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
 
                         }
                     }
@@ -402,6 +409,7 @@ switch (gameObject.name.Substring(0, 5))
                             Debug.Log("3 In C Row " + bluecCount / 3 + " Times");
                             blueCLinks = bluecCount / 3;
                             bluelinks = blueALinks + blueBLinks + blueCLinks;
+                            points = points + ((redlinks + bluelinks )* 5);
 
                         }
                     }

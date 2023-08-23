@@ -16,6 +16,11 @@ TagManager:
   - SideAC
   - LeftEdge
   - RightEdge
+  - ConeScored
+  - CubeScored
+  - Full
+  - Bumper
+  - Grabber
   layers:
   - Default
   - TransparentFX

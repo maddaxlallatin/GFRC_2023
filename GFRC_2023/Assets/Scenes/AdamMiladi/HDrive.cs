@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine; 
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class HDrive : MonoBehaviour
 {
-    
+    private Gamepad gamepad;
 
     public float DrivePower = 65f;
     public float BreakPower = 25f;
     public float TurnPower = 20f;
     public float torque = 100f;
 
-    private float horInput;
-    private float verInput;
+    private float horInput = 0;
+    private float verInput = 0;
 
     public Rigidbody rb;
     public Vector3 locVel;
@@ -22,7 +24,11 @@ public class HDrive : MonoBehaviour
     public Wheel LW;
     public Wheel RW;
 
-    void Start(){rb = GetComponentInParent<Rigidbody>();}
+    void Start()
+    {
+        rb = GetComponentInParent<Rigidbody>();
+        gamepad = Gamepad.current;        
+    }
 
     void Update() 
     {
@@ -35,7 +41,7 @@ public class HDrive : MonoBehaviour
         LW.UpdatePosition();
         RW.Accelerate(verInput * DrivePower);
         RW.UpdatePosition();
-        if (Input.GetKey(KeyCode.LeftShift)){
+        if (gamepad != null && gamepad.yButton.isPressed == true || Input.GetKey(KeyCode.LeftShift)){
             UW.Accelerate(horInput * DrivePower);
             UW.UpdatePosition();
             BW.Accelerate(horInput * -DrivePower);
@@ -49,28 +55,28 @@ public class HDrive : MonoBehaviour
         locVel = transform.InverseTransformDirection(rb.velocity);
 
     //break system
-        if (Input.GetKey("d") == false && locVel.x > 1)
+        if (horInput == 0  && locVel.x > 1)
         {
             UW.Accelerate(-locVel.x * BreakPower);
             UW.UpdatePosition();
             BW.Accelerate(-locVel.x * 1.0f * -BreakPower);
             BW.UpdatePosition();
         }
-            if (Input.GetKey("a") == false && locVel.x < -1)
+            if (horInput == 0 && locVel.x < -1)
         {
             UW.Accelerate(-locVel.x * BreakPower);
             UW.UpdatePosition();
             BW.Accelerate(-locVel.x * 1.0f * -BreakPower);
             BW.UpdatePosition();
         }
-        if (Input.GetKey("w") == false && locVel.z > 1)
+        if (verInput == 0 && locVel.z > 1)
         {
             LW.Accelerate(-locVel.z * BreakPower);
             LW.UpdatePosition();
             RW.Accelerate(-locVel.z * BreakPower);
             RW.UpdatePosition();
         }
-        if (Input.GetKey("s") == false && locVel.z < -1)
+        if (verInput == 0 && locVel.z < -1)
         {
             LW.Accelerate(-locVel.z * BreakPower);
             LW.UpdatePosition();
@@ -82,8 +88,18 @@ public class HDrive : MonoBehaviour
 
     void ProcessInput()
     {
-        verInput = Input.GetAxis("Vertical");
-        horInput = Input.GetAxis("Horizontal");
+    if (gamepad != null && gamepad.leftStick.ReadValue().y != 0)
+    {
+    verInput = gamepad.leftStick.ReadValue().y;
+    }
+    else{verInput = Input.GetAxis("Vertical");}
+
+    if (gamepad != null && gamepad.leftStick.ReadValue().x != 0)
+    {
+    horInput = gamepad.leftStick.ReadValue().x;
+    }
+    else{horInput = Input.GetAxis("Horizontal");}
+
     }
 
 }

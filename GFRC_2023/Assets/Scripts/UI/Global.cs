@@ -29,6 +29,7 @@ public static class Global
     public static string driveTrain;
     public static string manipulator;
     public static string chasis;
+    public static bool isOrange = false;
 
     public class databaseEntry
     {

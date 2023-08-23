@@ -18,12 +18,12 @@ public class AIGrabCube : MonoBehaviour
     void Pickup()
     {
         CubeIntent = AI.CubeIntent;
-        if (CubeIntent > 0 && Grab == false)
+        if (CubeIntent == 0 && AI.Path.x*AI.Path.x + AI.Path.z*AI.Path.z < .4f && Grab == false || CubeIntent == 6 && AI.Path.x*AI.Path.x + AI.Path.z*AI.Path.z < .4f && Grab == false)
         {
             Grab = true;
         }
         
-        else if (CubeIntent == 0 && Grab == true)
+        else if (CubeIntent == 4 && Grab == true)
         {
             Grab = false;
             Full = false;
@@ -38,7 +38,7 @@ public class AIGrabCube : MonoBehaviour
     void OnTriggerStay(Collider other)
     {   
         Checkother = ConeCheck.Full;
-        if (other.gameObject.CompareTag("CubeCollect") && Full == false && Checkother == false && Grab == true)
+        if (other.gameObject.CompareTag("CubeCollect") && Full == false && Grab == true)
         {
             other.tag = "CubeCollected";
             Full = true;

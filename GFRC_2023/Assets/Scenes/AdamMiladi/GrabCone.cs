@@ -1,26 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
+using UnityEngine.InputSystem.XInput;
 
 public class GrabCone : MonoBehaviour
 {
+    private Gamepad gamepad;
+
     public bool Grab = false;
     public bool Full = false;
     public bool Checkother = false;
     public GrabCube CubeCheck;
+    public ItemSpawner Deposit;
 
     void Start()
     {
+        Deposit = FindObjectOfType<ItemSpawner>();
+        gamepad = Gamepad.current; 
+        // var Controller = XInputController.current;
     }
 
     void Pickup()
     {
-        if (Input.GetKeyDown("space") && Grab == false)
+        if (gamepad != null && gamepad.aButton.wasPressedThisFrame == true && Grab == false  ||Input.GetKeyDown("space") && Grab == false)
         {
             Grab = true;
         }
-        
-        else if (Input.GetKeyDown("space") && Grab == true)
+
+        else if (gamepad != null && gamepad.aButton.wasPressedThisFrame == true && Grab == true  ||Input.GetKeyDown("space") && Grab == true)
         {
             Grab = false;
             Full = false;
@@ -51,7 +60,7 @@ public class GrabCone : MonoBehaviour
         if (other.gameObject.CompareTag("ConeCollected") && Grab == false )
         {other.tag = "ConeCollect";
         Full = false;
-        other.gameObject.transform.parent = null;
+        other.gameObject.transform.parent = Deposit.gameObject.transform;
         other.gameObject.GetComponent<Rigidbody>().useGravity = true;
         }
     }

@@ -63,6 +63,7 @@ MonoBehaviour:
   Full: 0
   Checkother: 0
   CubeCheck: {fileID: 8783365213121983017}
+  Deposit: {fileID: 0}
 --- !u!114 &8783365213121983017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,6 +80,7 @@ MonoBehaviour:
   Full: 0
   Checkother: 0
   ConeCheck: {fileID: 6384216358622265024}
+  Deposit: {fileID: 0}
 --- !u!1 &1564330286512390085
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94482084122457920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.325, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0, y: 0.035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.02, z: 0.6}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.65, y: 0.18, z: 0.65}
+  m_Center: {x: 0, y: 0.09, z: 0}
 --- !u!114 &8193272441716425591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PZBump: {x: 0, y: 0, z: 50}
-  BotBody: {fileID: 5531221374633440760}
+  Blue: 1
+  BotBody: {fileID: 3453803715355467274}
 --- !u!1 &432517053718235968
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,8 +339,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494775062014351842}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000000059604645, y: 0, z: -0.000000029802322}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -364,16 +365,16 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 4000
-    m_ExtremumValue: 4000
-    m_AsymptoteSlip: 4000
-    m_AsymptoteValue: 4000
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.01
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.01
-    m_AsymptoteValue: 0.1
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!65 &8315829488313870647
@@ -511,9 +512,11 @@ GameObject:
   - component: {fileID: 374169119127585975}
   - component: {fileID: 6450569755908365719}
   - component: {fileID: 4355997659235796751}
+  - component: {fileID: 2782407441913298905}
+  - component: {fileID: 6185319547422739115}
   m_Layer: 0
   m_Name: Cube.003
-  m_TagString: Untagged
+  m_TagString: Grabber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,6 +586,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2782407441913298905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103875453877896534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca36c9d14079b54f8e9a8eea87cbdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PZBump: {x: 0, y: 0, z: 1000}
+  Blue: 1
+  BotBody: {fileID: 3453803715355467274}
+--- !u!65 &6185319547422739115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103875453877896534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.225, y: 0.25, z: 0.0425}
+  m_Center: {x: -0.00000008940697, y: 0.000000018149608, z: -9.91271e-17}
 --- !u!1 &2108445707035441963
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +755,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9206941335705421249}
   - component: {fileID: 7964468107424193141}
-  - component: {fileID: 5531221374633440760}
+  - component: {fileID: 3453803715355467274}
   m_Layer: 0
   m_Name: AIHeavy
   m_TagString: Untagged
@@ -763,12 +794,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b904689d51de141a0935c0a86538e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Orange: 0
   FLift: {fileID: 0}
   Bot: {fileID: 7946814705223273070}
   DrivePower: 9
   AICone: {fileID: 571474518611159255}
   AICube: {fileID: 1096777597863865310}
-  OneEighty: 0
+  AIArm: {fileID: 1830958149385470395}
   CubeIntent: 0
   ConeIntent: 0
   Closest: {fileID: 0}
@@ -776,8 +808,10 @@ MonoBehaviour:
   Drive: {fileID: 0}
   distance: 0
   Zones: []
+  AIChasis: {fileID: 3453803715355467274}
   Overpass: 0
   Pastpass: 0
+  Row: 0
   RWheels:
   - {fileID: 4840548483493588062}
   - {fileID: 7923191803570388245}
@@ -786,13 +820,12 @@ MonoBehaviour:
   - {fileID: 6711828822181509254}
   - {fileID: 8679937763884561500}
   - {fileID: 3200297597947188182}
-  Cones:
-  - {fileID: 748842540792166462, guid: 65cfe1df53ff7be418d9178008e69e68, type: 3}
+  Cones: []
   Cubes: []
   Target: {x: 0, y: 0, z: 0}
   Path: {x: 0, y: 0, z: 0}
   RoTarget: 0
---- !u!54 &5531221374633440760
+--- !u!54 &3453803715355467274
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -800,7 +833,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2473706494052459108}
   serializedVersion: 2
-  m_Mass: 333
+  m_Mass: 320
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1082,8 +1115,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3723923584228699525}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000000044703484, y: 0, z: 0.000000059604645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1108,16 +1141,16 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 4000
-    m_ExtremumValue: 4000
-    m_AsymptoteSlip: 4000
-    m_AsymptoteValue: 4000
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.01
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.01
-    m_AsymptoteValue: 0.1
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!65 &7959116968696086290
@@ -1529,8 +1562,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6184595283361482504}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.00000011920929, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1555,16 +1588,16 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 4000
-    m_ExtremumValue: 4000
-    m_AsymptoteSlip: 4000
-    m_AsymptoteValue: 4000
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.01
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.01
-    m_AsymptoteValue: 0.1
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!65 &4647127698029820256
@@ -1605,8 +1638,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7797281363305181239}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.000000029802322, y: 0, z: 0.000000059604645}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1631,16 +1664,16 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 4000
-    m_ExtremumValue: 4000
-    m_AsymptoteSlip: 4000
-    m_AsymptoteValue: 4000
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.01
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.01
-    m_AsymptoteValue: 0.1
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!65 &2497225401231084717
@@ -1861,8 +1894,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8098901406620769580}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00000011920929, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1887,16 +1920,16 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 4000
-    m_ExtremumValue: 4000
-    m_AsymptoteSlip: 4000
-    m_AsymptoteValue: 4000
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.01
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.01
-    m_AsymptoteValue: 0.1
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!65 &6767514338191295785
@@ -1937,7 +1970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8150748283323062114}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2154,16 +2187,16 @@ WheelCollider:
   m_Mass: 100
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 4000
-    m_ExtremumValue: 4000
-    m_AsymptoteSlip: 4000
-    m_AsymptoteValue: 4000
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_SidewaysFriction:
-    m_ExtremumSlip: 0.01
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.01
-    m_AsymptoteValue: 0.1
+    m_ExtremumSlip: 1000000
+    m_ExtremumValue: 1000000
+    m_AsymptoteSlip: 1000000
+    m_AsymptoteValue: 1000000
     m_Stiffness: 1
   m_Enabled: 1
 --- !u!65 &5570260707494883670

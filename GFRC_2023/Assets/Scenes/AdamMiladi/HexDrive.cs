@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 
 public class HexDrive : MonoBehaviour
 {
+    private Gamepad gamepad;
+    
     public float DrivePower = 65f;
     public float BreakPower = 25f;
     public float TurnPower = 20f;
@@ -18,7 +22,11 @@ public class HexDrive : MonoBehaviour
     public Wheel[] RWheels;
     public Wheel[] LWheels;
 
-    void Start(){rb = GetComponentInParent<Rigidbody>();}
+    void Start()
+    {
+        rb = GetComponentInParent<Rigidbody>();
+        gamepad = Gamepad.current;        
+    }
 
     void Update() 
     {
@@ -27,7 +35,7 @@ public class HexDrive : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftShift)){
+        if (gamepad != null && gamepad.yButton.isPressed == true || Input.GetKey(KeyCode.LeftShift)){
         foreach(Wheel w in RWheels)
         {
             w.Accelerate(verInput * 2 * DrivePower);
@@ -55,7 +63,16 @@ public class HexDrive : MonoBehaviour
 
     void ProcessInput()
     {
-        verInput = Input.GetAxis("Vertical");
-        horInput = Input.GetAxis("Horizontal");
+    if (gamepad != null && gamepad.leftStick.ReadValue().y != 0)
+    {
+    verInput = gamepad.leftStick.ReadValue().y;
+    }
+    else{verInput = Input.GetAxis("Vertical");}
+
+    if (gamepad != null && gamepad.leftStick.ReadValue().x != 0)
+    {
+    horInput = gamepad.leftStick.ReadValue().x;
+    }
+    else{horInput = Input.GetAxis("Horizontal");}
     }
 }

@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
+
 
 public class CarDrive : MonoBehaviour
 {
+
+    private Gamepad gamepad;
+
     public float DrivePower = 65f;
     public float BreakPower = 25f;
     public float TurnPower = 20f;
@@ -20,7 +26,11 @@ public class CarDrive : MonoBehaviour
     public Wheel BL;
     public Wheel BR;
 
-    void Start(){rb = GetComponentInParent<Rigidbody>();}
+    void Start()
+    {
+        rb = GetComponentInParent<Rigidbody>(); 
+        gamepad = Gamepad.current;
+    }
 
     void Update() 
     {
@@ -44,7 +54,16 @@ public class CarDrive : MonoBehaviour
 
     void ProcessInput()
     {
-        verInput = Input.GetAxis("Vertical");
-        horInput = Input.GetAxis("Horizontal");
+    if (gamepad != null && gamepad.leftStick.ReadValue().y != 0)
+    {
+    verInput = gamepad.leftStick.ReadValue().y;
+    }
+    else{verInput = Input.GetAxis("Vertical");}
+
+    if (gamepad != null && gamepad.leftStick.ReadValue().x != 0)
+    {
+    horInput = gamepad.leftStick.ReadValue().x;
+    }
+    else{horInput = Input.GetAxis("Horizontal");}
     }
 }
