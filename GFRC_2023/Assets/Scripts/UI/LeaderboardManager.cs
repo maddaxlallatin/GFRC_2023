@@ -33,7 +33,7 @@ public class LeaderboardManager : MonoBehaviour
             thisPrefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             thisPrefab.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = databaseEntry.username;
             thisPrefab.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = databaseEntry.unixtime;
-            thisPrefab.transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = databaseEntry.build;
+           // thisPrefab.transform.GetChild(2).GetChild(0).GetComponent<TMP_Text>().text = databaseEntry.build;
             thisPrefab.transform.GetChild(3).GetChild(0).GetComponent<TMP_Text>().text = databaseEntry.teamnumber;
             thisPrefab.transform.GetChild(4).GetChild(0).GetComponent<TMP_Text>().text = databaseEntry.points + "";
         }
@@ -58,5 +58,31 @@ public class LeaderboardManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void gameOverLeaderboardUpdate(){
+        if(username == ""){
+            return;
+        }
+
+        var entries = getDatabaseEntries();
+        for (int i = 0; i < entries.Count; i++)    
+        {
+            if (entries[i].username.ToLower() == username.ToLower())
+            {
+                Debug.Log(entries[i].username);
+                Debug.Log(entries[i].points);
+                if(entries[i].points < points){
+                    entries[i].points = points;
+                    entries[i].unixtime = DateTime.Now.ToString("hh:mm tt MMMM dd, yyyy") + "";
+
+                }
+            
+                
+            }
+
+        }
+        insertDatabaseEntry(entries);
+        
     }
 }

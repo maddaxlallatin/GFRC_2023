@@ -7,7 +7,7 @@ public class TimeManager : MonoBehaviour
 {
     public TMP_Text timeText;
     public UnityEvent gameOverEvent= new UnityEvent();
-    public float timeRemaining = 60.0f;
+    public float timeRemaining = 150.0f;
     public bool gameOver = false;
     // Start is called before the first frame update
     void Start()
