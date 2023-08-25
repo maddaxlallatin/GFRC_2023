@@ -28,6 +28,8 @@ public class LeaderboardManager : MonoBehaviour
         w.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         foreach (var databaseEntry in entries)
         {
+            ExitButton.SetActive(false);
+            ExitButton.SetActive(true);
             thisPrefab = GameObject.Instantiate(Textprefab);
             thisPrefab.transform.SetParent(rowsObject.transform);
             thisPrefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);

@@ -8,7 +8,7 @@ public static class Global
 {
 
     //Database Managers
-    const string databaseName = "URI=file:Assets/Database/GFRC2023Database.db";
+    const string databaseName = "URI=file:GFRC2023Database.db";
     const string databaseLayout = "users (username VARCHAR(16), password VARCHAR(16), points INT, teamnumber VARCHAR(16), build VARCHAR(16), unixtime VARCHAR(16));";
     private const string DB_TABLE_LAYOUT = "users (username VARCHAR(16), pin VARCHAR(4), teamnumber VARCHAR(16), points INT, build VARCHAR(16), unixtime VARCHAR(16));";
 
