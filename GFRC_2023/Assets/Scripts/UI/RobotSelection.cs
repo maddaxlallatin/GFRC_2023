@@ -55,6 +55,12 @@ public class RobotSelection : MonoBehaviour
     private Vector3 ImagePosition;
     private Vector3 LeftSideImagePos;
     private Vector3 RightSideImagePos;
+
+
+    public GameObject bindingsMenu;
+    public GameObject ArmFillerControls;
+    public GameObject ClawControls;
+    public GameObject CubeChuckControls;
     private float animSpeed = 1.0f;
     void Start()
     {
@@ -272,6 +278,15 @@ public class RobotSelection : MonoBehaviour
             }
         }
 
+    }
+
+
+
+    public void BindingsButtonSelect(){
+        bindingsMenu.SetActive(true);
+        if(CurrentManipulator.gameObject.name == "OrangeArmFillerUIVERSION(Clone)" || CurrentManipulator.gameObject.name == "BlueArmFillerUIVERSION(Clone)" ) ArmFillerControls.SetActive(true);
+        if(CurrentManipulator.gameObject.name == "OrangeCircleClawUIVERSION(Clone)" || CurrentManipulator.gameObject.name == "BlueCircleClawUIVERSION(Clone)") ClawControls.SetActive(true);
+       if(CurrentManipulator.gameObject.name == "OrangeCubeChuckerUIVERSION(Clone)" || CurrentManipulator.gameObject.name == "BlueCubeChuckerUIVERSION(Clone)") CubeChuckControls.SetActive(true);
     }
 
 

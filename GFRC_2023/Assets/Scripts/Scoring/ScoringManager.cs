@@ -25,11 +25,13 @@ public class ScoringManager : MonoBehaviour
 
     private int redALinks, redBLinks, redCLinks;
     private int blueALinks, blueBLinks, blueCLinks;
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         Debug.Log("Collision");
         if (other.gameObject.tag == "CubeCollect" || other.gameObject.tag == "ConeCollect")
         {
+            if(isOrange && gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.name != "Red Side") return;
+            if(!isOrange && gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.name != "Blue Side") return;
 
             Debug.Log(gameObject.transform.parent.gameObject.name);
             switch (gameObject.transform.parent.gameObject.name)
@@ -221,6 +223,8 @@ switch (gameObject.name.Substring(0, 5))
         Debug.Log("Collision");
         if (other.gameObject.tag == "CubeCollect" || other.gameObject.tag == "ConeCollect")
         {
+            if(isOrange && gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.name != "Red Side") return;
+            if(!isOrange && gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.name != "Blue Side") return;
 
             Debug.Log(gameObject.transform.parent.gameObject.name);
             switch (gameObject.transform.parent.gameObject.name)
