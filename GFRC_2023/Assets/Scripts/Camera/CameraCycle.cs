@@ -9,15 +9,19 @@ public class CameraCycle : MonoBehaviour
     public List<Camera> compcams;
 
     public int currentcam = 0;
+    private Gamepad gamepad;
 
     public Camera robocam;
     //public Camera maincam;
     void Start()
     {
+        gamepad = Gamepad.current;
         robocam = (FindObjectOfType<RobotCamera>().gameObject.GetComponent<Camera>());
        // maincam = (FindObjectOfType<ThirdPersonCam>().gameObject.GetComponent<Camera>());
         SwitchToCamera(0);
         compcams.Add(robocam);
+        
+
       //  compcams.Add(maincam);
     }
 
@@ -31,7 +35,7 @@ public class CameraCycle : MonoBehaviour
         compcams[camIndex].gameObject.SetActive(true);
     }
 
-    void OnFire()
+    void SwitchCamera()
     {
         if(currentcam +1 < compcams.Count)
         {
@@ -42,5 +46,13 @@ public class CameraCycle : MonoBehaviour
             currentcam = 0;
         }
         SwitchToCamera(currentcam);
+    }
+
+    void Update()
+    {
+        if(gamepad != null && gamepad.xButton.wasPressedThisFrame == true)
+        {
+            SwitchCamera();
+        }
     }
 }

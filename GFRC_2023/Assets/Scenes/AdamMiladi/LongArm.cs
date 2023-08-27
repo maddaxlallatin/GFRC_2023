@@ -41,7 +41,7 @@ public class LongArm : MonoBehaviour
                 transform.Rotate(0,0,-ArmSpeed,Space.Self);
             } 
         }
-        if (gamepad != null && gamepad.buttonSouth.isPressed == true && Movelock == false || Input.GetKey("v") && Movelock == false)
+        if (gamepad != null && gamepad.dpad.down.isPressed == true && Movelock == false || Input.GetKey("v") && Movelock == false)
         {
             if (GrabAngle > 0)
             {
@@ -49,7 +49,7 @@ public class LongArm : MonoBehaviour
                 Grabber.transform.Rotate(0,0,GrabASpeed,Space.Self);
             } 
         }
-            if (gamepad != null && gamepad.buttonNorth.isPressed == true || Input.GetKey("c"))
+            if (gamepad != null && gamepad.dpad.up.isPressed == true || Input.GetKey("c"))
         {
             if (GrabAngle < 80)
             {
