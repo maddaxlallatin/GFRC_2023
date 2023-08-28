@@ -36,7 +36,6 @@ public AudioClip pointSFX;
         Debug.Log("Collision");
         if (other.gameObject.tag == "CubeCollect" || other.gameObject.tag == "ConeCollect")
         {
-                    AudioSource.PlayClipAtPoint(pointSFX, transform.position, 0.1f);
 
             if(isOrange && gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.name != "Red Side") return;
             if(!isOrange && gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.name != "Blue Side") return;
@@ -438,5 +437,14 @@ switch (gameObject.name.Substring(0, 5))
     public static void RemovePoints(int pointsToAdd)
     {
         points -= pointsToAdd;
+    }
+    public void OnTriggerEnter (Collider other)
+    {
+        if (other.gameObject.tag == "CubeCollect" || other.gameObject.tag == "ConeCollect")
+        {
+            //audio
+            AudioSource.PlayClipAtPoint(pointSFX, transform.position, 0.6f);
+
+        }
     }
 }
