@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Side2 : MonoBehaviour
 {
+    public GameObject CPlate;
+    public AudioClip Move;
     public int Up2 = 0;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,10 @@ if (col.gameObject.name == "col_Wheel")
             {
                 Up2++;
             }
+if (Up2 == 1)
+{
+AudioSource.PlayClipAtPoint(Move,CPlate.transform.position, 0.1f);
+}
 }
 void OnTriggerExit(Collider col)
 {

@@ -28,18 +28,18 @@ public class CircleClaw : MonoBehaviour
         {
             if (ArmAngle < 220)
             {
-                ArmAngle = ArmAngle + 1f;
-                transform.Rotate(0,-5f*BaseArmSpeed,0,Space.Self);
-                MidArm.transform.Rotate(0,0,5f*MidArmSpeed,Space.Self);
+                ArmAngle = ArmAngle + 2f;
+                transform.Rotate(0,-10f*BaseArmSpeed,0,Space.Self);
+                MidArm.transform.Rotate(0,0,10f*MidArmSpeed,Space.Self);
             } 
         }
         if (gamepad != null && gamepad.rightTrigger.isPressed == true || Input.GetKey("q"))
         {
             if (ArmAngle > 0)
             {
-                ArmAngle = ArmAngle - 1f;
-                transform.Rotate(0,5f*BaseArmSpeed,0,Space.Self);
-                MidArm.transform.Rotate(0,0,-5f*MidArmSpeed,Space.Self);
+                ArmAngle = ArmAngle - 2f;
+                transform.Rotate(0,10f*BaseArmSpeed,0,Space.Self);
+                MidArm.transform.Rotate(0,0,-10f*MidArmSpeed,Space.Self);
             }
         }
     }

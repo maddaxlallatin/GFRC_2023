@@ -57,16 +57,13 @@ public class CarDrive : MonoBehaviour
     if (gamepad != null && gamepad.leftStick.ReadValue().y != 0)
     {
     verInput = gamepad.leftStick.ReadValue().y;
-
     }
-    else if(gamepad==null){verInput = Input.GetAxis("Vertical");}
+    else if (gamepad==null){verInput = Input.GetAxis("Vertical");}
 
     if (gamepad != null && gamepad.leftStick.ReadValue().x != 0)
     {
     horInput = gamepad.leftStick.ReadValue().x;
-
-    
     }
-    else if(gamepad==null){horInput = Input.GetAxis("Horizontal");}
+    else if (gamepad==null){horInput = Input.GetAxis("Horizontal");}
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.InputSystem.Utilities;
 public class ClawRotate : MonoBehaviour
 {
     private Gamepad gamepad;
-    private float TurnSpeed= 2.0f;
+    private float TurnSpeed = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +19,10 @@ public class ClawRotate : MonoBehaviour
     {
         if (gamepad != null && gamepad.rightShoulder.isPressed == true || Input.GetKey("r"))
         {
-            Debug.Log("Right Shoulder Pressed");
             transform.Rotate(0,TurnSpeed,0,Space.Self);
         }
         if (gamepad != null && gamepad.leftShoulder.isPressed == true || Input.GetKey("f"))
         {
-            Debug.Log("Left Shoulder Pressed");
             transform.Rotate(0,-TurnSpeed,0,Space.Self);
         }
     }

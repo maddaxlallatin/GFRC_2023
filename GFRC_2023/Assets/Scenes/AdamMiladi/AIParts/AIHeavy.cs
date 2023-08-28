@@ -18,8 +18,6 @@ public class AIHeavy : MonoBehaviour
     public float distance;
     public List<GameObject> Zones;
     public Rigidbody AIChasis;
-    public int Overpass = 0;
-    public float Pastpass;
     public int Row;
 
     public Wheel[] RWheels;
@@ -49,7 +47,7 @@ public class AIHeavy : MonoBehaviour
     RoTarget = 180-(180/Mathf.PI)*Mathf.Atan(Path.z/Path.x);
     }
     
-     if (RoTarget < 0) {RoTarget = RoTarget + 360;}
+     if (RoTarget < 0) {RoTarget += 360;}
     }
 
 
@@ -147,7 +145,7 @@ public class AIHeavy : MonoBehaviour
     else if (AICube.Full == true)
     {
         CubeIntent = 1;
-        Debug.Log("Victory");
+        // Debug.Log("Victory");
         foreach(Wheel w in RWheels)
         {
             w.Accelerate(0);
@@ -277,6 +275,7 @@ else {Path = Target - Bot.transform.position + new Vector3(-5.7f,0,0);}
     }
     else
     {
+        Debug.Log(AIChasis.velocity);
         AIChasis.velocity = new Vector3(AIChasis.velocity.x/10, AIChasis.velocity.y/10, AIChasis.velocity.z/10);
         // Debug.Log("Victory");
         CubeIntent = 2;
@@ -387,8 +386,8 @@ else {Path = Target - Bot.transform.position + new Vector3(-5.7f,0,0);}
     {
     Path = Target - Bot.transform.position;
     RoTargeting();
-    Debug.Log(transform.eulerAngles.y);
-    Debug.Log(RoTarget);
+    // Debug.Log(transform.eulerAngles.y);
+    // Debug.Log(RoTarget);
     if (transform.eulerAngles.y > RoTarget + 1f || transform.eulerAngles.y < RoTarget - 1f)
     {
     
@@ -448,7 +447,7 @@ else {Path = Target - Bot.transform.position + new Vector3(-5.7f,0,0);}
     {
         Path = Target - Bot.transform.position;
         RoTargeting();
-        Debug.Log(Path);
+        // Debug.Log(Path);
 
     if (transform.eulerAngles.y > RoTarget + 1.5f || transform.eulerAngles.y < RoTarget - 1.5f)
     {

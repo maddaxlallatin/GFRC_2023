@@ -8,6 +8,7 @@ public class ScoringManager : MonoBehaviour
     // Start is called before the first frame update
 #pragma warning disable IDE0051
 
+public AudioClip pointSFX;
 
     void Start()
     {
@@ -27,9 +28,16 @@ public class ScoringManager : MonoBehaviour
     private int blueALinks, blueBLinks, blueCLinks;
     private void OnTriggerStay(Collider other)
     {
+
+
+
+
+        
         Debug.Log("Collision");
         if (other.gameObject.tag == "CubeCollect" || other.gameObject.tag == "ConeCollect")
         {
+                    AudioSource.PlayClipAtPoint(pointSFX, transform.position, 0.1f);
+
             if(isOrange && gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.name != "Red Side") return;
             if(!isOrange && gameObject.transform.parent.gameObject.transform.parent.gameObject.transform.parent.name != "Blue Side") return;
 

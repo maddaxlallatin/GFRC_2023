@@ -24,22 +24,22 @@ public class ChuckGrabCube : MonoBehaviour
 
     void Pickup()
     {
-        if (gamepad != null && gamepad.aButton.wasPressedThisFrame == true && Grab == false && Grab == false)
+        if (gamepad != null && gamepad.aButton.wasPressedThisFrame == true && Grab == false||Input.GetKeyUp("space") && Grab == false)
         {
             Grab = true;
         }
         
-        else if (gamepad != null && gamepad.aButton.wasPressedThisFrame == true && Grab == false && Grab == true)
+        else if (gamepad != null && gamepad.aButton.wasPressedThisFrame == true && Grab == false||Input.GetKeyUp("space") && Grab == true)
         {
             Grab = false;
             Full = false;
         }
-        if (gamepad != null && gamepad.aButton.isPressed == true && Full == true && PCharge == true  && Full == true && PCharge == true)
+        if (gamepad != null && gamepad.aButton.isPressed == true && Full == true && PCharge == true ||Input.GetKey("space") && Full == true && PCharge == true)
         {
             Power = Power + .1f;
             if (Power > 20){PCharge = false;}
         }
-        if (gamepad != null && gamepad.aButton.isPressed == true && Full == true && PCharge == false  && Full == true && PCharge == false)
+        if (gamepad != null && gamepad.aButton.isPressed == true && Full == true && PCharge == false ||Input.GetKey("space") && Full == true && PCharge == false)
         {
             Power = Power - .1f;
             if (Power < .01){PCharge = true;}
@@ -85,8 +85,6 @@ public class ChuckGrabCube : MonoBehaviour
             SlingShot = false;
             Reset = true;
         }
-
-        
     }
     void OnTriggerExit(Collider other){Reset = false;}
 }

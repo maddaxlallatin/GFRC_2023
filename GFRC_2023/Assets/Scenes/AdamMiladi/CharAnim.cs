@@ -39,6 +39,7 @@ public class CharAnim : MonoBehaviour
         }
         if (Up1 == 0)
         {
+            
             if (S1Angle < 34.25f && Up2 == 0)
             {
                 S1Angle = S1Angle + .75f;
